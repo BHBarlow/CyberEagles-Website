@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,34 +27,43 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+
         .cyber-glow {
             box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
         }
+
         .carousel-image {
             transition: opacity 1s ease-in-out;
         }
-        
+
         /* Page transition styles */
         .page-section {
             display: none;
             animation: fadeIn 0.3s ease-in-out;
         }
-        
+
         .page-section.active {
             display: block;
         }
-        
+
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        
+
         .nav-link.active {
             color: #ffd700 !important;
         }
-
     </style>
 </head>
+
 <body class="bg-cyber-black text-white font-mono">
     <!-- Header -->
     <header class="bg-cyber-dark border-b border-cyber-purple/30 sticky top-0 z-50">
@@ -62,36 +72,51 @@
                 <!-- Logo -->
                 <div class="flex items-center space-x-6">
                 </div>
-                                
+
                 <!-- Navigation -->
                 <nav class="hidden md:flex space-x-6">
-                    <a href="javascript:void(0)" onclick="showPage('home')" class="nav-link active text-cyber-gold hover:text-white transition-colors">Home</a>
-                    <a href="javascript:void(0)" onclick="showPage('about')" class="nav-link text-white hover:text-cyber-gold transition-colors">About</a>
-                    <a href="javascript:void(0)" onclick="showPage('competitions')" class="nav-link text-white hover:text-cyber-gold transition-colors">Competitions</a>
-                    <a href="javascript:void(0)" onclick="showPage('calendar')" class="nav-link text-white hover:text-cyber-gold transition-colors">Calendar</a>
-                    <a href="javascript:void(0)" onclick="showPage('ctf')" class="nav-link text-white hover:text-cyber-gold transition-colors">CTF</a>
-                    <a href="javascript:void(0)" onclick="showPage('leadership')" class="nav-link text-white hover:text-cyber-gold transition-colors">Become a Lead</a>
-                    <a href="javascript:void(0)" onclick="showPage('Labs')" class="nav-link text-white hover:text-cyber-gold transition-colors">Labs</a>
+                    <a href="javascript:void(0)" onclick="showPage('home')"
+                        class="nav-link active text-cyber-gold hover:text-white transition-colors">Home</a>
+                    <a href="javascript:void(0)" onclick="showPage('about')"
+                        class="nav-link text-white hover:text-cyber-gold transition-colors">About</a>
+                    <a href="javascript:void(0)" onclick="showPage('competitions')"
+                        class="nav-link text-white hover:text-cyber-gold transition-colors">Competitions</a>
+                    <a href="javascript:void(0)" onclick="showPage('calendar')"
+                        class="nav-link text-white hover:text-cyber-gold transition-colors">Calendar</a>
+                    <!-- <a href="javascript:void(0)" onclick="showPage('ctf')"
+                        class="nav-link text-white hover:text-cyber-gold transition-colors">CTF</a> -->
+                    <a href="javascript:void(0)" onclick="showPage('leadership')"
+                        class="nav-link text-white hover:text-cyber-gold transition-colors">Become a Lead</a>
+                    <a href="javascript:void(0)" onclick="showPage('Labs')"
+                        class="nav-link text-white hover:text-cyber-gold transition-colors">Labs</a>
 
                 </nav>
-                
+
                 <!-- Mobile Menu Button -->
                 <button class="md:hidden text-cyber-gold" onclick="toggleMobileMenu()">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
                 </button>
             </div>
-            
+
             <!-- Mobile Menu -->
             <div id="mobileMenu" class="hidden md:hidden mt-4 space-y-2">
-                <a href="javascript:void(0)" onclick="showPage('home')" class="block py-2 text-cyber-gold hover:text-white transition-colors">Home</a>
-                <a href="javascript:void(0)" onclick="showPage('about')" class="block py-2 text-white hover:text-cyber-gold transition-colors">About</a>
-                <a href="javascript:void(0)" onclick="showPage('competitions')" class="block py-2 text-white hover:text-cyber-gold transition-colors">Competitions</a>
-                <a href="javascript:void(0)" onclick="showPage('calendar')" class="block py-2 text-white hover:text-cyber-gold transition-colors">Calendar</a>
-                <a href="javascript:void(0)" onclick="showPage('ctf')" class="block py-2 text-white hover:text-cyber-gold transition-colors">CTF</a>
-                <a href="javascript:void(0)" onclick="showPage('leadership')" class="block py-2 text-white hover:text-cyber-gold transition-colors">Become a Lead</a>
-                <a href="javascript:void(0)" onclick="showPage('Labs')" class="block py-2 text-white hover:text-cyber-gold transition-colors">Labs</a>
+                <a href="javascript:void(0)" onclick="showPage('home')"
+                    class="block py-2 text-cyber-gold hover:text-white transition-colors">Home</a>
+                <a href="javascript:void(0)" onclick="showPage('about')"
+                    class="block py-2 text-white hover:text-cyber-gold transition-colors">About</a>
+                <a href="javascript:void(0)" onclick="showPage('competitions')"
+                    class="block py-2 text-white hover:text-cyber-gold transition-colors">Competitions</a>
+                <a href="javascript:void(0)" onclick="showPage('calendar')"
+                    class="block py-2 text-white hover:text-cyber-gold transition-colors">Calendar</a>
+                <!-- <a href="javascript:void(0)" onclick="showPage('ctf')"
+                    class="block py-2 text-white hover:text-cyber-gold transition-colors">CTF</a> -->
+                <a href="javascript:void(0)" onclick="showPage('leadership')"
+                    class="block py-2 text-white hover:text-cyber-gold transition-colors">Become a Lead</a>
+                <a href="javascript:void(0)" onclick="showPage('Labs')"
+                    class="block py-2 text-white hover:text-cyber-gold transition-colors">Labs</a>
             </div>
         </div>
     </header>
@@ -108,52 +133,49 @@
                             <span class="gradient-text">TTU Cyber</span><br>
                         </h1>
                         <p class="text-xl text-white leading-relaxed">
-                            Join us in exploring cybersecurity, competing in Competitions, and building the next generation of security professionals.
+                            Join us in exploring cybersecurity, competing in Competitions, and building the next
+                            generation of security professionals.
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4">
-                            <button onclick="joinDiscord()" class="bg-cyber-purple hover:bg-purple-600 text-white px-8 py-4 rounded-lg font-semibold transition-all cyber-glow">
+                            <button onclick="joinDiscord()"
+                                class="bg-cyber-purple hover:bg-purple-600 text-white px-8 py-4 rounded-lg font-semibold transition-all cyber-glow">
                                 🎮 Join Discord
                             </button>
-                            <button onclick="showPage('about')" class="border border-cyber-gold text-cyber-gold hover:bg-cyber-gold hover:text-cyber-black px-8 py-4 rounded-lg font-semibold transition-all">
+                            <button onclick="showPage('about')"
+                                class="border border-cyber-gold text-cyber-gold hover:bg-cyber-gold hover:text-cyber-black px-8 py-4 rounded-lg font-semibold transition-all">
                                 Learn More
                             </button>
                         </div>
                     </div>
-                    
+
                     <!-- Right Content - Image Carousel -->
                     <div class="relative h-96 rounded-lg overflow-hidden cyber-glow">
-                    <div id="carousel" class="relative w-full h-full">
-                        <div class="carousel-item absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
-                        <img
-                            src="photos/carousel/ccdc-quals-2nd.jpeg"
-                            alt="Cybersecurity Excellence"
-                            class="w-full h-full object-cover"
-                        />
-                        <div class="absolute inset-x-0 bottom-0 left-1 flex items-center h-16">
-                            <h3 class="text-2xl font-bold text-white">CCDC Quals 2nd</h3>
+                        <div id="carousel" class="relative w-full h-full">
+                            <div
+                                class="carousel-item absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
+                                <img src="photos/carousel/ccdc-quals-2nd.jpeg" alt="Cybersecurity Excellence"
+                                    class="w-full h-full object-cover" />
+                                <div class="absolute inset-x-0 bottom-0 left-1 flex items-center h-16">
+                                    <h3 class="text-2xl font-bold text-white">CCDC Quals 2nd</h3>
+                                </div>
+                            </div>
+                            <div
+                                class="carousel-item absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
+                                <img src="photos/carousel/ccdc-reginals-1st.jpeg" alt="CTF Champions"
+                                    class="w-full h-full object-cover" />
+                                <div class="absolute inset-x-0 bottom-0 left-1 flex items-center h-16">
+                                    <h3 class="text-2xl font-bold text-white">SECCDC 1st</h3>
+                                </div>
+                            </div>
+                            <div
+                                class="carousel-item absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
+                                <img src="photos/carousel/CPTC-reginals-1st.jpeg" alt="Future Leaders"
+                                    class="w-full h-full object-cover" />
+                                <div class="absolute inset-x-0 bottom-0 left-1  flex items-center h-16">
+                                    <h3 class="text-2xl font-bold text-white">CPTC Regionals 1st</h3>
+                                </div>
+                            </div>
                         </div>
-                        </div>
-                        <div class="carousel-item absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
-                        <img
-                            src="photos/carousel/ccdc-reginals-1st.jpeg"
-                            alt="CTF Champions"
-                            class="w-full h-full object-cover"
-                        />
-                        <div class="absolute inset-x-0 bottom-0 left-1 flex items-center h-16">
-                            <h3 class="text-2xl font-bold text-white">SECCDC 1st</h3>
-                        </div>
-                        </div>
-                        <div class="carousel-item absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
-                        <img
-                            src="photos/carousel/CPTC-reginals-1st.jpeg"
-                            alt="Future Leaders"
-                            class="w-full h-full object-cover"
-                        />
-                        <div class="absolute inset-x-0 bottom-0 left-1  flex items-center h-16">
-                            <h3 class="text-2xl font-bold text-white">CPTC Regionals 1st</h3>
-                        </div>
-                        </div>
-                    </div>
                     </div>
 
 
@@ -169,10 +191,14 @@
             <div class="grid lg:grid-cols-2 gap-12 items-start">
                 <div class="space-y-6">
                     <p class="text-lg text-gray-300 leading-relaxed">
-                        The Tennessee Tech Cyber Security Clubs are dedicated to fostering cybersecurity awareness, education, networking and hands-on experience among students. We provide a collaborative environment where members can develop practical skills in cyber security.
+                        The Tennessee Tech Cyber Security Clubs are dedicated to fostering cybersecurity awareness,
+                        education, networking and hands-on experience among students. We provide a collaborative
+                        environment where members can develop practical skills in cyber security.
                     </p>
                     <p class="text-lg text-gray-300 leading-relaxed">
-                        Our clubs regularly participates in competitions like CCDC, CPTC, CyberForce, InfoSec, eCTF and many more. Our clubs also hosts meetings and labs on security tools and techniques weekly, and connects students with industry professionals and internship opportunities.
+                        Our clubs regularly participates in competitions like CCDC, CPTC, CyberForce, InfoSec, eCTF and
+                        many more. Our clubs also hosts meetings and labs on security tools and techniques weekly, and
+                        connects students with industry professionals and internship opportunities.
                     </p>
                     <div class="grid grid-cols-2 gap-6 mt-8">
                         <div class="text-center">
@@ -213,19 +239,22 @@
             <div class="p-8 rounded-lg mb-8 cyber-glow bg-cyber-black">
                 <div class="container mx-auto px-4 mt-16">
                     <h2 class="text-4xl font-bold text-blue-700 text-center mb-12">
-                    Defensive Cybersecurity Interest Group (DCIG) (Beginner)
+                        Defensive Cybersecurity Interest Group (DCIG) (Beginner)
                     </h2>
                     <div class="space-y-6">
-                    <p class="text-lg text-white leading-relaxed">
-                        The Tennessee Tech Defensive Cyber Interest Group
-                        <span class="font-bold text-blue-700">DCIG</span> is a student-led group of aspiring cybersecurity professionals with the goal of 
-                        educating the next generation of defensive security experts. We hold biweekly meetings that cover topics ranging from the basics 
-                        of Windows security to enterprise network hardening. We pride ourselves on creating high quality lectures and hands-on labs that 
-                        provide applicable knowledge for industry certifications and careers.
-                    </p>
-                    <p class="text-lg text-white leading-relaxed">
-                        <span class="font-bold text-blue-700">Lead: </span>Jp Ognibene
-                        <span class="font-bold text-blue-700">Discord: </span>jippybean
+                        <p class="text-lg text-white leading-relaxed">
+                            The Tennessee Tech Defensive Cyber Interest Group
+                            <span class="font-bold text-blue-700">DCIG</span> is a student-led group of aspiring
+                            cybersecurity professionals with the goal of
+                            educating the next generation of defensive security experts. We hold biweekly meetings that
+                            cover topics ranging from the basics
+                            of Windows security to enterprise network hardening. We pride ourselves on creating high
+                            quality lectures and hands-on labs that
+                            provide applicable knowledge for industry certifications and careers.
+                        </p>
+                        <p class="text-lg text-white leading-relaxed">
+                            <span class="font-bold text-blue-700">Lead: </span>Chandler Cook
+                            <span class="font-bold text-blue-700">Discord: </span>kyr0sz
                     </div>
                 </div>
             </div>
@@ -233,20 +262,24 @@
             <div class="p-8 rounded-lg mb-8 cyber-glow bg-cyber-black">
                 <div class="container mx-auto px-4 mt-16">
                     <h2 class="text-4xl font-bold text-red-700 text-center mb-12">
-                    Offensive Cybersecurity Interest Group (OCIG) (Beginner)
+                        Offensive Cybersecurity Interest Group (OCIG) (Beginner)
                     </h2>
                     <div class="space-y-6">
-                    <p class="text-lg text-white leading-relaxed">
-                        The Tennessee Tech Offensive Cyber Interest Group
-                        <span class="font-bold text-red-700">OCIG</span> is a student-led group dedicated to exploring the world of offensive security. 
-                        We meet biweekly to cover topics in red teaming, penetration testing, and other areas of ethical hacking. We want to help members 
-                        understand what offensive security is, how it’s applied in the real world, and how to build the skills needed to succeed in the field.
-                        Through hands-on activities, discussions, and learning opportunities, we provide a space for anyone, whether new or experienced, to practice, 
-                        grow, and prepare for careers in cybersecurity.
-                    </p>
-                    <p class="text-lg text-white leading-relaxed">
-                        <span class="font-bold text-red-700">Lead: </span>Grant Palasak
-                        <span class="font-bold text-red-700">Discord: </span>gjpman
+                        <p class="text-lg text-white leading-relaxed">
+                            The Tennessee Tech Offensive Cyber Interest Group
+                            <span class="font-bold text-red-700">OCIG</span> is a student-led group dedicated to
+                            exploring the world of offensive security.
+                            We meet biweekly to cover topics in red teaming, penetration testing, and other areas of
+                            ethical hacking. We want to help members
+                            understand what offensive security is, how it’s applied in the real world, and how to build
+                            the skills needed to succeed in the field.
+                            Through hands-on activities, discussions, and learning opportunities, we provide a space for
+                            anyone, whether new or experienced, to practice,
+                            grow, and prepare for careers in cybersecurity.
+                        </p>
+                        <p class="text-lg text-white leading-relaxed">
+                            <span class="font-bold text-red-700">Lead: </span>Nicholas Liverett
+                            <span class="font-bold text-red-700">Discord: </span>nliverett7
                     </div>
                 </div>
             </div>
@@ -254,19 +287,23 @@
             <div class="p-8 rounded-lg mb-8 cyber-glow bg-cyber-black">
                 <div class="container mx-auto px-4 mt-16">
                     <h2 class="text-4xl font-bold text-green-700 text-center mb-12">
-                    CTF Cybersecurity Interest Group (CCIG) (Beginner)
+                        CTF Cybersecurity Interest Group (CCIG) (Beginner)
                     </h2>
                     <div class="space-y-6">
-                    <p class="text-lg text-white leading-relaxed">
-                        The Tennessee Tech Capture the Flag Cyber Interest Group 
-                        <span class="font-bold text-green-700">CCIG</span> is a student-led group where members can hone their skills across the various domains of cybersecurity. 
-                        This is done through the use of Capture the Flag competitions, where students are asked to find a "flag", a string of text, that is hidden in websites or programs. 
-                        Through bi-weekly hands-on meetings, we will cover various topics such as web exploitation, cryptography, digital forensics, reverse engineering, and much more! Our
-                        goal is to provide a environment for the learning and growth of all students as they continue in cybersecurity.
-                    </p>
-                    <p class="text-lg text-white leading-relaxed">
-                        <span class="font-bold text-green-700">Lead: </span>Jmac Brentlinger
-                        <span class="font-bold text-green-700">Discord: </span>ultramac16
+                        <p class="text-lg text-white leading-relaxed">
+                            The Tennessee Tech Capture the Flag Cyber Interest Group
+                            <span class="font-bold text-green-700">CCIG</span> is a student-led group where members can
+                            hone their skills across the various domains of cybersecurity.
+                            This is done through the use of Capture the Flag competitions, where students are asked to
+                            find a "flag", a string of text, that is hidden in websites or programs.
+                            Through bi-weekly hands-on meetings, we will cover various topics such as web exploitation,
+                            cryptography, digital forensics, reverse engineering, and much more! Our
+                            goal is to provide a environment for the learning and growth of all students as they
+                            continue in cybersecurity.
+                        </p>
+                        <p class="text-lg text-white leading-relaxed">
+                            <span class="font-bold text-green-700">Lead: </span>Jmac Brentlinger
+                            <span class="font-bold text-green-700">Discord: </span>ultramac16
                     </div>
                 </div>
             </div>
@@ -274,21 +311,25 @@
             <div class="p-8 rounded-lg mb-8 cyber-glow bg-cyber-black">
                 <div class="container mx-auto px-4 mt-16">
                     <h2 class="text-4xl font-bold text-cyber-purple text-center mb-12">
-                    Women In Cyber Security Club (WICYS) (Beginner)
+                        Women In Cyber Security Club (WICYS) (Beginner)
                     </h2>
                     <div class="space-y-6">
-                    <p class="text-lg text-white leading-relaxed">
-                        The Tennessee Tech Women in Cybersecurity Club
-                        <span class="font-bold text-cyber-purple">WICYS</span> is to help build a strong gender-diverse cybersecurity workforce by facilitating 
-                        recruitment, retention, and advancement for women in the field. As a member of WiCys, you have access to all the resources and opportunities
-                        provided by your network. From community groups to career fairs, scholarships to speaking opportunities, and much more. Join us in our regular
-                        meetings to hear from cyber professionals, engage in hands-on technical demonstrations, and social outings. We are all-inclusive, and welcome
-                        people interested in cyber from all levels of skill and majors.
-                    </p>
-                    <p class="text-lg text-white leading-relaxed">
-                        <span class="font-bold text-cyber-purple">Lead: </span>Danny Hernandez
-                        <span class="font-bold text-cyber-purple">Discord: </span>danny_or_michelle
-                    </p>
+                        <p class="text-lg text-white leading-relaxed">
+                            The Tennessee Tech Women in Cybersecurity Club
+                            <span class="font-bold text-cyber-purple">WICYS</span> is to help build a strong
+                            gender-diverse cybersecurity workforce by facilitating
+                            recruitment, retention, and advancement for women in the field. As a member of WiCys, you
+                            have access to all the resources and opportunities
+                            provided by your network. From community groups to career fairs, scholarships to speaking
+                            opportunities, and much more. Join us in our regular
+                            meetings to hear from cyber professionals, engage in hands-on technical demonstrations, and
+                            social outings. We are all-inclusive, and welcome
+                            people interested in cyber from all levels of skill and majors.
+                        </p>
+                        <p class="text-lg text-white leading-relaxed">
+                            <span class="font-bold text-cyber-purple">Lead: </span>Danny Hernandez
+                            <span class="font-bold text-cyber-purple">Discord: </span>danny_or_michelle
+                        </p>
                     </div>
                 </div>
             </div>
@@ -296,20 +337,24 @@
             <div class="p-8 rounded-lg mb-8 cyber-glow bg-cyber-black">
                 <div class="container mx-auto px-4 mt-16">
                     <h2 class="text-4xl font-bold text-cyber-gold text-center mb-12">
-                    Cyber Eagles Club (Beginner)
+                        Cyber Eagles Club (Beginner)
                     </h2>
                     <div class="space-y-6 center-text">
-                    <p class="text-lg text-white leading-relaxed">
-                        The Tennessee Tech club
-                        <span class="font-bold text-cyber-gold">Cyber Eagles</span> is a student-led organization fostering a holistic understanding of the 
-                        cybersecurity industry. We provide a dynamic forum for engagement, hosting industry speakers to share professional insights and showcasing 
-                        student experiences from competitions, internships, and various academic endeavors. Our goal is to connect students with real-world perspectives,
-                        prepare them for diverse career paths, and enhance overall professional readiness in cybersecurity.
-                    </p>
-                    <p class="text-lg text-white leading-relaxed">
-                        <span class="font-bold text-cyber-gold">Lead: </span>Behnjamin Barlow
-                        <span class="font-bold text-cyber-gold">Discord: </span>n1ghtwa1k3r
-                    </p>
+                        <p class="text-lg text-white leading-relaxed">
+                            The Tennessee Tech club
+                            <span class="font-bold text-cyber-gold">Cyber Eagles</span> is a student-led organization
+                            fostering a holistic understanding of the
+                            cybersecurity industry. We provide a dynamic forum for engagement, hosting industry speakers
+                            to share professional insights and showcasing
+                            student experiences from competitions, internships, and various academic endeavors. Our goal
+                            is to connect students with real-world perspectives,
+                            prepare them for diverse career paths, and enhance overall professional readiness in
+                            cybersecurity.
+                        </p>
+                        <p class="text-lg text-white leading-relaxed">
+                            <span class="font-bold text-cyber-gold">Lead: </span>Behnjamin Barlow
+                            <span class="font-bold text-cyber-gold">Discord: </span>n1ghtwa1k3r
+                        </p>
                     </div>
                 </div>
             </div>
@@ -317,19 +362,22 @@
             <div class=" p-8 rounded-lg mb-8 cyber-glow bg-cyber-black">
                 <div class="container mx-auto px-4 mt-16">
                     <h2 class="text-4xl font-bold text-white text-center mb-12">
-                    Competition Club (Intermediate/Advanced)
+                        Competition Club (Intermediate/Advanced)
                     </h2>
                     <div class="space-y-6">
-                    <p class="text-lg text-white leading-relaxed">
-                        The Tennessee Tech Cyber Security Club
-                        <span class="font-bold text-cyber-white">Competition Club</span> is a student-led group dedicated to teaching and preparing students for 
-                        cybersecurity competitions and industry. It is meant for more advanced students, but everyone is welcome to attend. Both blue team and red 
-                        team topics are being covered depending on the semester. Meetings are held bi-weekly which cover topics such as Windows, Linux, service hardening, 
-                        threat hunting, website, Active Directory, and various pentesting methodologies.
-                    </p>
-                    <p class="text-lg text-white leading-relaxed">
-                        <span class="font-bold text-cyber-white">Lead: </span> Landon Foister
-                        <span class="font-bold text-cyber-white">Discord: </span>foister150
+                        <p class="text-lg text-white leading-relaxed">
+                            The Tennessee Tech Cyber Security Club
+                            <span class="font-bold text-cyber-white">Competition Club</span> is a student-led group
+                            dedicated to teaching and preparing students for
+                            cybersecurity competitions and industry. It is meant for more advanced students, but
+                            everyone is welcome to attend. Both blue team and red
+                            team topics are being covered depending on the semester. Meetings are held bi-weekly which
+                            cover topics such as Windows, Linux, service hardening,
+                            threat hunting, website, Active Directory, and various pentesting methodologies.
+                        </p>
+                        <p class="text-lg text-white leading-relaxed">
+                            <span class="font-bold text-cyber-white">Lead: </span> Landon Foister
+                            <span class="font-bold text-cyber-white">Discord: </span>foister150
                     </div>
                 </div>
             </div>
@@ -340,31 +388,95 @@
     <!-- Competitions Section -->
     <section id="competitions" class="page-section py-32">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold gradient-text text-center mb-12">Competitions & Achievements</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-cyber-dark p-6 rounded-lg cyber-glow">
-                    <h3 class="text-xl font-bold text-cyber-gold mb-4">Recent Victories</h3>
-                    <ul class="space-y-3 text-gray-300">
-                        <li>🥇 SECCDC Regional Champions 2025</li>
-                        <li>🥇 CPTC Regional Champions 2025</li>
-                        <li>🥇 InfoSec CTF Champions 2025</li>
-                        <li>🥈 Cyberfoce 2nd Place 2025</li>
-                    </ul>
+            <h2 class="text-6xl font-bold gradient-text text-center mb-12">Competitions</h2>
+            <div class="mt-20 max-w-[80vw] mx-auto">
+                <!-- CCDC Card -->
+                <div class="p-8 rounded-lg mb-8 cyber-glow bg-cyber-black border border-cyber-purple/20">
+                    <div class="container mx-auto px-4 mt-8">
+                        <h2 class="text-3xl md:text-4xl font-bold text-blue-600 text-center mb-4">
+                            Collegiate Cyber Defense Competition (CCDC)
+                        </h2>
+                        <h3 class="text-xl text-blue-400 text-center mb-8">(SECCDC Region)</h3>
+                        <div class="space-y-6">
+                            <p class="text-lg text-gray-300 leading-relaxed">
+                                This is the premier national defensive competition where teams act as "Blue Teams"
+                                inheriting and securing a corporate network. Your team must maintain critical services
+                                and handle business tasks while actively defending against a live "Red Team" of
+                                professional hackers. It tests system administration, incident response, and security
+                                hardening skills.
+                            </p>
+                            <p class="text-md text-gray-400 font-semibold text-center">
+                                📅 Typical Schedule: January – April
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-cyber-dark p-6 rounded-lg cyber-glow">
-                    <h3 class="text-xl font-bold text-cyber-purple mb-4">Upcoming Events</h3>
-                    <ul class="space-y-3 text-gray-300">
-                        <li>📅 TBD</li>
-                    </ul>
+
+                <!-- CPTC Card -->
+                <div class="p-8 rounded-lg mb-8 cyber-glow bg-cyber-black border border-cyber-purple/20">
+                    <div class="container mx-auto px-4 mt-8">
+                        <h2 class="text-3xl md:text-4xl font-bold text-red-600 text-center mb-4">
+                            Collegiate Penetration Testing Competition (CPTC)
+                        </h2>
+                        <h3 class="text-xl text-red-400 text-center mb-8">(Central Region Host)</h3>
+                        <div class="space-y-6">
+                            <p class="text-lg text-gray-300 leading-relaxed">
+                                Focusing on offensive security and professional consulting, CPTC tasks your team with
+                                mimicking a security firm performing a real-world penetration test. Scoring emphasizes
+                                not just technical findings, but also the quality of the final report and professional
+                                presentation of vulnerabilities and recommendations to business judges.
+                            </p>
+                            <p class="text-md text-gray-400 font-semibold text-center">
+                                📅 Regional Events: October/November
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-cyber-dark p-6 rounded-lg cyber-glow">
-                    <h3 class="text-xl font-bold text-cyber-gold mb-4">Training Focus</h3>
-                    <ul class="space-y-3 text-gray-300">
-                        <li>🔍 Digital Forensics</li>
-                        <li>🌐 Web Application Security</li>
-                        <li>🔐 System Hardening</li>
-                        <li>🖥️ System Administration</li>
-                    </ul>
+
+                <!-- DOE CyberForce Card -->
+                <div class="p-8 rounded-lg mb-8 cyber-glow bg-cyber-black border border-cyber-purple/20">
+                    <div class="container mx-auto px-4 mt-8">
+                        <h2 class="text-3xl md:text-4xl font-bold text-cyber-gold text-center mb-4">
+                            DOE CyberForce Competition
+                        </h2>
+                        <h3 class="text-xl text-yellow-500 text-center mb-8">(Department of Energy)</h3>
+                        <div class="space-y-6">
+                            <p class="text-lg text-gray-300 leading-relaxed">
+                                Sponsored by the Department of Energy (DOE), this competition focuses on defending
+                                critical infrastructure (CI) and industrial control systems (ICS), often centered on the
+                                energy grid. The competition format integrates the core
+                                blue-team defense scenario with a CTF/puzzle component to challenge students across
+                                multiple skill sets and test their ability to handle real-world threats and related
+                                security
+                                tasks. Teams must balance security with the operational function of these vital
+                                systems, facing realistic CI-focused threats.
+                            </p>
+                            <p class="text-md text-gray-400 font-semibold text-center">
+                                📅 National Competition: November
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NCL Card -->
+                <div class="p-8 rounded-lg mb-8 cyber-glow bg-cyber-black border border-cyber-purple/20">
+                    <div class="container mx-auto px-4 mt-8">
+                        <h2 class="text-3xl md:text-4xl font-bold text-cyber-purple text-center mb-4">
+                            National Cyber League (NCL)
+                        </h2>
+                        <h3 class="text-xl text-purple-400 text-center mb-8">(Semester-long)</h3>
+                        <div class="space-y-6">
+                            <p class="text-lg text-gray-300 leading-relaxed">
+                                An accessible, semester-long competition designed for students to develop and test
+                                practical, industry-relevant cybersecurity skills across diverse categories like
+                                Forensics, Cryptography, and Network Traffic Analysis. Students receive a detailed
+                                Scouting Report showcasing their performance, which is valuable for job applications.
+                            </p>
+                            <p class="text-md text-gray-400 font-semibold text-center">
+                                � Spring Season: March/April | Fall Season: October/November
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -373,572 +485,22 @@
     <!-- Calendar Section -->
     <section id="calendar" class="page-section py-32 ">
         <div class="container mx-auto px-4">
-            <h2 class="text-6xl font-bold gradient-text text-center mb-12">Interest Group Schedules</h2>
-            
+            <h2 class="text-6xl font-bold gradient-text text-center mb-12">Spring 2026 Coming Soon...</h2>
+
             <!-- Calendar Content -->
             <div class="max-w-6xl mx-auto bg-cyber-dark p-8 rounded-lg cyber-glow">
                 <p class="text-lg text-gray-300 text-center mb-8">
                     Stay up-to-date with all our upcoming meetings and events across our interest groups.
                 </p>
 
-                <div class="space-y-6">
 
-                    <!-- August 28, 2025 -->
-                    <div class="flex items-start space-x-4 p-4 bg-cyber-black rounded-lg border border-cyber-purple/30">
-                        <div class="flex-shrink-0 text-center">
-                            <span class="block text-xl font-bold text-cyber-gold">AUG</span>
-                            <span class="block text-3xl font-bold text-white">28</span>
-                            <span class="block text-sm text-gray-400">THU</span>
-                        </div>
-                        <div class="flex-grow">
-                            <!-- OCIG & DCIG -->
-                            <h3 class="text-lg font-bold text-gray-400"><span class="text-blue-700">DCIG </span>&<span class="font-bold text-red-700"> OCIG</span>: Intro</h3>
-                            <p class="text-gray-300">
-                                Location: BRUN 228 | Time: 6pm-8pm CST
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- September 2, 2025 (WICYS) -->
-                    <div class="flex items-start space-x-4 p-4 bg-cyber-black rounded-lg border border-cyber-purple/30">
-                        <div class="flex-shrink-0 text-center">
-                            <span class="block text-xl font-bold text-cyber-gold">SEP</span>
-                            <span class="block text-3xl font-bold text-white">02</span>
-                            <span class="block text-sm text-gray-400">TUE</span>
-                        </div>
-                        <div class="flex-grow">
-                            <h3 class="text-lg font-bold text-cyber-purple">WICYS Meeting: Intro Meeting</h3>
-                            <p class="text-gray-300">
-                                Location: AIEB 203 | Time: 11am-11:59am CST
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <!-- September 4, 2025 (Cyber Eagles & DCIG) -->
-                    <div class="flex items-start space-x-4 p-4 bg-cyber-black rounded-lg border border-cyber-gold/30">
-                        <div class="flex-shrink-0 text-center">
-                            <span class="block text-xl font-bold text-cyber-gold">SEP</span>
-                            <span class="block text-3xl font-bold text-white">04</span>
-                            <span class="block text-sm text-gray-400">THU</span>
-                        </div>
-                        <div class="flex-grow">
-                            <h3 class="text-lg font-bold text-cyber-gold">Cyber Eagles Meeting: Intro</h3>
-                            <p class="text-gray-300">
-                                Location: BRUN 119 | Time: 11am-11:59am CST
-                            </p>
-                            <h3 class="text-lg font-bold text-blue-700">DCIG: Network Setup</h3>
-                            <p class="text-gray-300">
-                                Location: BRUN 228 | Time: 6pm-8pm CST
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- September 8, 2025 (CTF) -->
-                    <div class="flex items-start space-x-4 p-4 bg-cyber-black rounded-lg border border-green-700/30">
-                        <div class="flex-shrink-0 text-center">
-                            <span class="block text-xl font-bold text-cyber-gold">SEP</span>
-                            <span class="block text-3xl font-bold text-white">08</span>
-                            <span class="block text-sm text-gray-400">MON</span>
-                        </div>
-                        <div class="flex-grow">
-                            <h3 class="text-lg font-bold text-green-700">CTF CLUB: Open Source Intelligence</h3>
-                            <p class="text-gray-300">
-                                Location: BRUN 327 | Time: 6pm-8pm CST
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <!-- September 11, 2025 (OCIG) -->
-                    <div class="flex items-start space-x-4 p-4 bg-cyber-black rounded-lg border border-red-700/30">
-                        <div class="flex-shrink-0 text-center">
-                            <span class="block text-xl font-bold text-cyber-gold">SEP</span>
-                            <span class="block text-3xl font-bold text-white">11</span>
-                            <span class="block text-sm text-gray-400">THU</span>
-                        </div>
-                        <div class="flex-grow">
-                            <h3 class="text-lg font-bold text-red-700">OCIG: Recon</h3>
-                            <p class="text-gray-300">
-                                Location: BRUN 228 | Time: 6pm-8pm CST
-                            </p>
-                        </div>
-                    </div>
-                        <!-- September 13, 2025 (Competition Club) -->
-                        <div class="flex items-start space-x-4 p-4 bg-cyber-black rounded-lg border border-cyber-gold/30">
-                            <div class="flex-shrink-0 text-center">
-                                <span class="block text-xl font-bold text-cyber-gold">SEP</span>
-                                <span class="block text-3xl font-bold text-white">13</span>
-                                <span class="block text-sm text-gray-400">SAT</span>
-                            </div>
-                            <div class="flex-grow">
-                                <h3 class="text-lg font-bold text-white">Competition Club: CCDC Methodology</h3>
-                                <p class="text-gray-300">
-                                    Location: BRUN 228 | Time: 4pm-7pm CST
-                                </p>
-                            </div>
-                        </div>
-
-                    <!-- September 16, 2025 (WICYS) -->
-                    <div class="flex items-start space-x-4 p-4 bg-cyber-black rounded-lg border border-cyber-purple/30">
-                        <div class="flex-shrink-0 text-center">
-                            <span class="block text-xl font-bold text-cyber-gold">SEP</span>
-                            <span class="block text-3xl font-bold text-white">16</span>
-                            <span class="block text-sm text-gray-400">TUE</span>
-                        </div>
-                        <div class="flex-grow">
-                                <h3 class="text-lg font-bold text-cyber-purple">WICYS Meeting: Try a CTF</h3>
-                                <p class="text-gray-300">
-                                    Location: AIEB 203 | Time: 11am-11:59am CST
-                                </p>
-                        </div>
-                    </div>
-
-                    <!-- September 18, 2025 (Cyber Eagles & DCIG) -->
-                    <div class="flex items-start space-x-4 p-4 bg-cyber-black rounded-lg border border-cyber-gold/30">
-                        <div class="flex-shrink-0 text-center">
-                            <span class="block text-xl font-bold text-cyber-gold">SEP</span>
-                            <span class="block text-3xl font-bold text-white">18</span>
-                            <span class="block text-sm text-gray-400">THU</span>
-                        </div>
-                        <div class="flex-grow">
-                            <h3 class="text-lg font-bold text-cyber-gold">Cyber Eagles Meeting: Speaker</h3>
-                            <p class="text-gray-300">
-                                Location: BRUN 119 | Time: 11am-11:59am CST
-                            </p>
-                            <h3 class="text-lg font-bold text-blue-700">DCIG: Vulnerabilities in the Wild</h3>
-                            <p class="text-gray-300">
-                                Location: BRUN 228 | Time: 6pm-8pm CST
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- September 22, 2025 (CTF) -->
-                    <div class="flex items-start space-x-4 p-4 bg-cyber-black rounded-lg border border-green-700/30">
-                        <div class="flex-shrink-0 text-center">
-                            <span class="block text-xl font-bold text-cyber-gold">SEP</span>
-                            <span class="block text-3xl font-bold text-white">22</span>
-                            <span class="block text-sm text-gray-400">MON</span>
-                        </div>
-                        <div class="flex-grow">
-                            <h3 class="text-lg font-bold text-green-700">CTF CLUB: Web Applications</h3>
-                            <p class="text-gray-300">
-                                Location: BRUN 327 | Time: 6pm-8pm CST
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- September 23, 2025 (WICYS) -->
-                    <div class="flex items-start space-x-4 p-4 bg-cyber-black rounded-lg border border-cyber-purple/30">
-                        <div class="flex-shrink-0 text-center">
-                            <span class="block text-xl font-bold text-cyber-gold">SEP</span>
-                            <span class="block text-3xl font-bold text-white">23</span>
-                            <span class="block text-sm text-gray-400">TUE</span>
-                        </div>
-                        <div class="flex-grow">
-                                <h3 class="text-lg font-bold text-cyber-purple">WICYS Meeting: Dr. Amani's 'Mining Your Bracelet' Bitcoin Workshop</h3>
-                                <p class="text-gray-300">
-                                    Location: AIEB 203 | Time: 11am-11:59am CST
-                                </p>
-                        </div>
-                    </div>
-                    <!-- September 25, 2025 (OCIG) -->
-                    <div class="flex items-start space-x-4 p-4 bg-cyber-black rounded-lg border border-red-700/30">
-                        <div class="flex-shrink-0 text-center">
-                            <span class="block text-xl font-bold text-cyber-gold">SEP</span>
-                            <span class="block text-3xl font-bold text-white">25</span>
-                            <span class="block text-sm text-gray-400">THU</span>
-                        </div>
-                        <div class="flex-grow">
-                            <h3 class="text-lg font-bold text-red-700">OCIG: Web Exploitation</h3>
-                            <p class="text-gray-300">
-                                Location: BRUN 228 | Time: 6pm-8pm CST
-                            </p>
-                        </div>
-                    </div>
-                        <!-- September 27, 2025 (Competition Club) -->
-                        <div class="flex items-start space-x-4 p-4 bg-cyber-black rounded-lg border border-cyber-gold/30">
-                            <div class="flex-shrink-0 text-center">
-                                <span class="block text-xl font-bold text-cyber-gold">SEP</span>
-                                <span class="block text-3xl font-bold text-white">27</span>
-                                <span class="block text-sm text-gray-400">SAT</span>
-                            </div>
-                            <div class="flex-grow">
-                                <h3 class="text-lg font-bold text-white">Competition Club: Common Services</h3>
-                                <p class="text-gray-300">
-                                    Location: BRUN 228 | Time: 4pm-7pm CST
-                                </p>
-                            </div>
-                        </div>
-                    <!-- September 30, 2025 (WICYS) -->
-                    <div class="flex items-start space-x-4 p-4 bg-cyber-black rounded-lg border border-cyber-purple/30">
-                        <div class="flex-shrink-0 text-center">
-                            <span class="block text-xl font-bold text-cyber-gold">SEP</span>
-                            <span class="block text-3xl font-bold text-white">30</span>
-                            <span class="block text-sm text-gray-400">TUE</span>
-                        </div>
-                        <div class="flex-grow">
-                            <h3 class="text-lg font-bold text-cyber-purple">WICYS Meeting: Conference Registration + Art Activity</h3>
-                            <p class="text-gray-300">
-                                Location: AIEB 203 | Time: 11am-11:59am CST
-                            </p>
-                        </div>
-                    </div>
-                    <!-- October 2, 2025 (Cyber Eagles & DCIG) -->
-                    <div class="flex items-start space-x-4 p-4 bg-cyber-black rounded-lg border border-cyber-gold/30">
-                        <div class="flex-shrink-0 text-center">
-                            <span class="block text-xl font-bold text-cyber-gold">OCT</span>
-                            <span class="block text-3xl font-bold text-white">02</span>
-                            <span class="block text-sm text-gray-400">THU</span>
-                        </div>
-                        <div class="flex-grow">
-                            <h3 class="text-lg font-bold text-cyber-gold">Cyber Eagles Meeting: Internship Panel</h3>
-                            <p class="text-gray-300">
-                                Location: BRUN 119 | Time: 11am-11:59am CST
-                            </p>
-                            <h3 class="text-lg font-bold text-blue-700">DCIG: System Hardening</h3>
-                            <p class="text-gray-300">
-                                Location: BRUN 228 | Time: 6pm-8pm CST
-                            </p>
-                        </div>
-                    </div>
-                    <!-- October 6, 2025 (CTF) -->
-                    <div class="flex items-start space-x-4 p-4 bg-cyber-black rounded-lg border border-green-700/30">
-                        <div class="flex-shrink-0 text-center">
-                            <span class="block text-xl font-bold text-cyber-gold">OCT</span>
-                            <span class="block text-3xl font-bold text-white">06</span>
-                            <span class="block text-sm text-gray-400">MON</span>
-                        </div>
-                        <div class="flex-grow">
-                            <h3 class="text-lg font-bold text-green-700">CTF CLUB: Forensics</h3>
-                            <p class="text-gray-300">
-                                Location: BRUN 327 | Time: 6pm-8pm CST
-                            </p>
-                        </div>
-                    </div>
-                    <!-- October 7, 2025 (WICYS) -->
-                    <div class="flex items-start space-x-4 p-4 bg-cyber-black rounded-lg border border-cyber-purple/30">
-                        <div class="flex-shrink-0 text-center">
-                            <span class="block text-xl font-bold text-cyber-gold">OCT</span>
-                            <span class="block text-3xl font-bold text-white">07</span>
-                            <span class="block text-sm text-gray-400">TUE</span>
-                        </div>
-                        <div class="flex-grow">
-                            <h3 class="text-lg font-bold text-cyber-purple">WICYS Meeting: ORNL Jen Sim's Cyber-Physical Workshop*</h3>
-                            <p class="text-gray-300">
-                                Location: AIEB 203 | Time: 10:30am-11:59am CST
-                            </p>
-                        </div>
-                    </div>
-                    <!-- October 9, 2025 (OCIG) -->
-                    <div class="flex items-start space-x-4 p-4 bg-cyber-black rounded-lg border border-red-700/30">
-                        <div class="flex-shrink-0 text-center">
-                            <span class="block text-xl font-bold text-cyber-gold">OCT</span>
-                            <span class="block text-3xl font-bold text-white">09</span>
-                            <span class="block text-sm text-gray-400">THU</span>
-                        </div>
-                        <div class="flex-grow">
-                            <h3 class="text-lg font-bold text-red-700">OCIG: Red Team Tooling</h3>
-                            <p class="text-gray-300">
-                                Location: BRUN 228 | Time: 6pm-8pm CST
-                            </p>
-                        </div>
-                    </div>
-                        <!-- October 11, 2025 (Competition Club) -->
-                        <div class="flex items-start space-x-4 p-4 bg-cyber-black rounded-lg border border-cyber-gold/30">
-                            <div class="flex-shrink-0 text-center">
-                                <span class="block text-xl font-bold text-cyber-gold">OCT</span>
-                                <span class="block text-3xl font-bold text-white">11</span>
-                                <span class="block text-sm text-gray-400">SAT</span>
-                            </div>
-                            <div class="flex-grow">
-                                <h3 class="text-lg font-bold text-white">Competition Club: WEB/DB</h3>
-                                <p class="text-gray-300">
-                                    Location: BRUN 228 | Time: 4pm-7pm CST
-                                </p>
-                            </div>
-                        </div>
-
-                    <!-- October 20, 2025 (CTF) -->
-                    <div class="flex items-start space-x-4 p-4 bg-cyber-black rounded-lg border border-green-700/30">
-                        <div class="flex-shrink-0 text-center">
-                            <span class="block text-xl font-bold text-cyber-gold">OCT</span>
-                            <span class="block text-3xl font-bold text-white">20</span>
-                            <span class="block text-sm text-gray-400">MON</span>
-                        </div>
-                        <div class="flex-grow">
-                            <h3 class="text-lg font-bold text-green-700">CTF CLUB: Crypto</h3>
-                            <p class="text-gray-300">
-                                Location: BRUN 327 | Time: 6pm-8pm CST
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- October 21, 2025 (WICYS) -->
-                    <div class="flex items-start space-x-4 p-4 bg-cyber-black rounded-lg border border-cyber-purple/30">
-                        <div class="flex-shrink-0 text-center">
-                            <span class="block text-xl font-bold text-cyber-gold">OCT</span>
-                            <span class="block text-3xl font-bold text-white">21</span>
-                            <span class="block text-sm text-gray-400">TUE</span>
-                        </div>
-                        <div class="flex-grow">
-                                <h3 class="text-lg font-bold text-cyber-purple">WICYS Meeting: CTF Revisited</h3>
-                                <p class="text-gray-300">
-                                    Location: AIEB 203 | Time: 11am-11:59am CST
-                                </p>
-                        </div>
-                    </div>
-                    <!-- October 23, 2025 (WICYS) -->
-                    <div class="flex items-start space-x-4 p-4 bg-cyber-black rounded-lg border border-cyber-purple/30">
-                        <div class="flex-shrink-0 text-center">
-                            <span class="block text-xl font-bold text-cyber-gold">OCT</span>
-                            <span class="block text-3xl font-bold text-white">23</span>
-                            <span class="block text-sm text-gray-400">THU</span>
-                        </div>
-                        <div class="flex-grow">
-                            <h3 class="text-lg font-bold text-cyber-purple">WICYS Meeting: Movie+Roblox Night*</h3>
-                            <p class="text-gray-300">
-                                Location: AIEB 203 | Time: 7pm-9pm CST
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <!-- October 23, 2025 (DCIG) -->
-                    <div class="flex items-start space-x-4 p-4 bg-cyber-black rounded-lg border border-blue-700/30">
-                        <div class="flex-shrink-0 text-center">
-                            <span class="block text-xl font-bold text-cyber-gold">OCT</span>
-                            <span class="block text-3xl font-bold text-white">23</span>
-                            <span class="block text-sm text-gray-400">THU</span>
-                        </div>
-                        <div class="flex-grow">
-                            <h3 class="text-lg font-bold text-blue-700">DCIG: Network Analysis</h3>
-                            <p class="text-gray-300">
-                                Location: BRUN 228 | Time: 6pm-8pm CST
-                            </p>
-                        </div>
-                    </div>
-                        <!-- October 25, 2025 (Competition Club) -->
-                        <div class="flex items-start space-x-4 p-4 bg-cyber-black rounded-lg border border-cyber-gold/30">
-                            <div class="flex-shrink-0 text-center">
-                                <span class="block text-xl font-bold text-cyber-gold">OCT</span>
-                                <span class="block text-3xl font-bold text-white">25</span>
-                                <span class="block text-sm text-gray-400">SAT</span>
-                            </div>
-                            <div class="flex-grow">
-                                <h3 class="text-lg font-bold text-white">Competition Club: Windows Persistence</h3>
-                                <p class="text-gray-300">
-                                    Location: BRUN 228 | Time: 4pm-7pm CST
-                                </p>
-                            </div>
-                        </div>
-                        <!-- October 30, 2025 (Cyber Eagles & OCIG) -->
-                    <div class="flex items-start space-x-4 p-4 bg-cyber-black rounded-lg border border-cyber-gold/30">
-                        <div class="flex-shrink-0 text-center">
-                            <span class="block text-xl font-bold text-cyber-gold">OCT</span>
-                            <span class="block text-3xl font-bold text-white">30</span>
-                            <span class="block text-sm text-gray-400">THU</span>
-                        </div>
-                        <div class="flex-grow">
-                            <h3 class="text-lg font-bold text-cyber-gold">Cyber Eagles Meeting: Speaker</h3>
-                            <p class="text-gray-300">
-                                Location: BRUN 119 | Time: 11am-11:59am CST
-                            </p>
-                            <h3 class="text-lg font-bold text-red-700">OCIG: Privilege Escalation</h3>
-                            <p class="text-gray-300">
-                                Location: BRUN 228 | Time: 6pm-8pm CST
-                            </p>
-                        </div>
-                    </div>
-                        <!-- November 3, 2025 (CTF) -->
-                    <div class="flex items-start space-x-4 p-4 bg-cyber-black rounded-lg border border-green-700/30">
-                        <div class="flex-shrink-0 text-center">
-                            <span class="block text-xl font-bold text-cyber-gold">NOV</span>
-                            <span class="block text-3xl font-bold text-white">03</span>
-                            <span class="block text-sm text-gray-400">MON</span>
-                        </div>
-                        <div class="flex-grow">
-                            <h3 class="text-lg font-bold text-green-700">CTF CLUB: Reverse Engineering / Binary Exploitation</h3>
-                            <p class="text-gray-300">
-                                Location: BRUN 327 | Time: 6pm-8pm CST
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- November 4, 2025 (WICYS) -->
-                    <div class="flex items-start space-x-4 p-4 bg-cyber-black rounded-lg border border-cyber-purple/30">
-                        <div class="flex-shrink-0 text-center">
-                            <span class="block text-xl font-bold text-cyber-gold">NOV</span>
-                            <span class="block text-3xl font-bold text-white">04</span>
-                            <span class="block text-sm text-gray-400">TUE</span>
-                        </div>
-                        <div class="flex-grow">
-                                <h3 class="text-lg font-bold text-cyber-purple">WICYS Meeting: Surprise Workshop</h3>
-                                <p class="text-gray-300">
-                                    Location: AIEB 203 | Time: 11am-11:59am CST
-                                </p>
-                        </div>
-                    </div>
-
-                    <!-- November 6, 2025 (DCIG) -->
-                    <div class="flex items-start space-x-4 p-4 bg-cyber-black rounded-lg border border-blue-700/30">
-                        <div class="flex-shrink-0 text-center">
-                            <span class="block text-xl font-bold text-cyber-gold">NOV</span>
-                            <span class="block text-3xl font-bold text-white">06</span>
-                            <span class="block text-sm text-gray-400">THU</span>
-                        </div>
-                        <div class="flex-grow">
-                            <h3 class="text-lg font-bold text-blue-700">DCIG: Firewalls and Intrusion Detection Systems</h3>
-                            <p class="text-gray-300">
-                                Location: BRUN 228 | Time: 6pm-8pm CST
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- November 8, 2025 (Competition club) -->
-                    <div class="flex items-start space-x-4 p-4 bg-cyber-black rounded-lg border border-cyber-gold/30">
-                        <div class="flex-shrink-0 text-center">
-                            <span class="block text-xl font-bold text-cyber-gold">NOV</span>
-                            <span class="block text-3xl font-bold text-white">08</span>
-                            <span class="block text-sm text-gray-400">SAT</span>
-                        </div>
-                        <div class="flex-grow">
-                            <h3 class="text-lg font-bold text-white">Competition Club: Linux Persistence</h3>
-                            <p class="text-gray-300">
-                                Location: BRUN 228 | Time: 4pm-7pm CST
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- November 13, 2025 (Cyber Eagles & OCIG) -->
-                    <div class="flex items-start space-x-4 p-4 bg-cyber-black rounded-lg border border-cyber-gold/30">
-                        <div class="flex-shrink-0 text-center">
-                            <span class="block text-xl font-bold text-cyber-gold">NOV</span>
-                            <span class="block text-3xl font-bold text-white">13</span>
-                            <span class="block text-sm text-gray-400">THU</span>
-                        </div>
-                        <div class="flex-grow">
-                            <h3 class="text-lg font-bold text-cyber-gold">Cyber Eagles Meeting: Competition Panel</h3>
-                            <p class="text-gray-300">
-                                Location: BRUN 119 | Time: 11am-11:59am CST
-                            </p>
-                            <h3 class="text-lg font-bold text-red-700">OCIG: Persistence</h3>
-                            <p class="text-gray-300">
-                                Location: BRUN 228 | Time: 6pm-8pm CST
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- November 17, 2025 (CTF) -->
-                    <div class="flex items-start space-x-4 p-4 bg-cyber-black rounded-lg border border-green-700/30">
-                        <div class="flex-shrink-0 text-center">
-                            <span class="block text-xl font-bold text-cyber-gold">NOV</span>
-                            <span class="block text-3xl font-bold text-white">17</span>
-                            <span class="block text-sm text-gray-400">MON</span>
-                        </div>
-                        <div class="flex-grow">
-                            <h3 class="text-lg font-bold text-green-700">CTF CLUB: Network Traffic Analysis</h3>
-                            <p class="text-gray-300">
-                                Location: BRUN 327 | Time: 6pm-8pm CST
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- November 18, 2025 (WICYS) -->
-                    <div class="flex items-start space-x-4 p-4 bg-cyber-black rounded-lg border border-cyber-purple/30">
-                        <div class="flex-shrink-0 text-center">
-                            <span class="block text-xl font-bold text-cyber-gold">NOV</span>
-                            <span class="block text-3xl font-bold text-white">18</span>
-                            <span class="block text-sm text-gray-400">TUE</span>
-                        </div>
-                        <div class="flex-grow">
-                                <h3 class="text-lg font-bold text-cyber-purple">WICYS Meeting: Weird Art Painting</h3>
-                                <p class="text-gray-300">
-                                    Location: AIEB 203 | Time: 11am-11:59am CST
-                                </p>
-                        </div>
-                    </div>
-
-                    <!-- November 20, 2025 (DCIG) -->
-                    <div class="flex items-start space-x-4 p-4 bg-cyber-black rounded-lg border border-blue-700/30">
-                        <div class="flex-shrink-0 text-center">
-                            <span class="block text-xl font-bold text-cyber-gold">NOV</span>
-                            <span class="block text-3xl font-bold text-white">20</span>
-                            <span class="block text-sm text-gray-400">THU</span>
-                        </div>
-                        <div class="flex-grow">
-                            <h3 class="text-lg font-bold text-blue-700">DCIG: Blue Team Automation</h3>
-                            <p class="text-gray-300">
-                                Location: BRUN 228 | Time: 6pm-8pm CST
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- November 22, 2025 (Competition club) -->
-                    <div class="flex items-start space-x-4 p-4 bg-cyber-black rounded-lg border border-cyber-gold/30">
-                        <div class="flex-shrink-0 text-center">
-                            <span class="block text-xl font-bold text-cyber-gold">NOV</span>
-                            <span class="block text-3xl font-bold text-white">22</span>
-                            <span class="block text-sm text-gray-400">SAT</span>
-                        </div>
-                        <div class="flex-grow">
-                            <h3 class="text-lg font-bold text-white">Competition Club: Combating C/2</h3>
-                            <p class="text-gray-300">
-                                Location: BRUN 228 | Time: 4pm-7pm CST
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- December 1, 2025 (CTF) -->
-                    <div class="flex items-start space-x-4 p-4 bg-cyber-black rounded-lg border border-green-700/30">
-                        <div class="flex-shrink-0 text-center">
-                            <span class="block text-xl font-bold text-cyber-gold">DEC</span>
-                            <span class="block text-3xl font-bold text-white">01</span>
-                            <span class="block text-sm text-gray-400">MON</span>
-                        </div>
-                        <div class="flex-grow">
-                            <h3 class="text-lg font-bold text-green-700">CTF CLUB: Log Analysis</h3>
-                            <p class="text-gray-300">
-                                Location: BRUN 327 | Time: 6pm-8pm CST
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- December 4, 2025 (OCIG & DCIG) -->
-                    <div class="flex items-start space-x-4 p-4 bg-cyber-black rounded-lg border border-cyber-purple/30">
-                        <div class="flex-shrink-0 text-center">
-                            <span class="block text-xl font-bold text-cyber-gold">DEC</span>
-                            <span class="block text-3xl font-bold text-white">04</span>
-                            <span class="block text-sm text-gray-400">THU</span>
-                        </div>
-                        <div class="flex-grow">
-                            <!-- OCIG & DCIG -->
-                            <h3 class="text-lg font-bold text-gray-400"><span class="text-blue-700">DCIG </span>&<span class="font-bold text-red-700"> OCIG</span>: Homelabbing</h3>
-                            <p class="text-gray-300">
-                                Location: BRUN 228 | Time: 6pm-8pm CST
-                            </p>
-                        </div>
-                    </div>
-                        <!-- December 6, 2025 (Competition Club) -->
-                        <div class="flex items-start space-x-4 p-4 bg-cyber-black rounded-lg border border-cyber-gold/30">
-                            <div class="flex-shrink-0 text-center">
-                                <span class="block text-xl font-bold text-cyber-gold">DEC</span>
-                                <span class="block text-3xl font-bold text-white">06</span>
-                                <span class="block text-sm text-gray-400">SAT</span>
-                            </div>
-                            <div class="flex-grow">
-                                <h3 class="text-lg font-bold text-white">Competition Club: Firewall Technologies</h3>
-                                <p class="text-gray-300">
-                                    Location: BRUN 228 | Time: 4pm-7pm CST
-                                </p>
-                            </div>
-                        </div>
-
-                </div>
             </div>
-            <!-- End Calendar Content -->
-
         </div>
+        <!-- End Calendar Content -->
+
     </section>
 
-    <!-- CTF Section -->
+    <!-- CTF Section 
     <section id="ctf" class="page-section py-32">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl font-bold gradient-text text-center mb-16">Capture The Flag (CTF)</h2>
@@ -946,7 +508,10 @@
                 <div class="space-y-6">
                     <h3 class="text-2xl font-bold text-cyber-gold">What is CTF?</h3>
                     <p class="text-gray-300 leading-relaxed">
-                        Capture The Flag competitions are cybersecurity challenges where teams solve puzzles, find vulnerabilities, and demonstrate their hacking skills in a legal, educational environment. These competitions cover various domains including web security, cryptography, reverse engineering, and digital forensics.
+                        Capture The Flag competitions are cybersecurity challenges where teams solve puzzles, find
+                        vulnerabilities, and demonstrate their hacking skills in a legal, educational environment. These
+                        competitions cover various domains including web security, cryptography, reverse engineering,
+                        and digital forensics.
                     </p>
                     <div class="bg-cyber-dark p-6 rounded-lg cyber-glow">
                         <h4 class="text-xl font-bold text-cyber-purple mb-4">CTF Categories</h4>
@@ -986,13 +551,15 @@
                             <span>No experience required—beginners welcome!</span>
                         </div>
                     </div>
-                    <button onclick="joinCTF()" class="w-full bg-white text-cyber-purple font-bold py-3 px-6 rounded-lg mt-6 hover:bg-gray-100 transition-colors">
+                    <button onclick="joinCTF()"
+                        class="w-full bg-white text-cyber-purple font-bold py-3 px-6 rounded-lg mt-6 hover:bg-gray-100 transition-colors">
                         GO TO CTF
                     </button>
                 </div>
             </div>
         </div>
     </section>
+    -->
 
     <!-- Leadership Section -->
     <section id="leadership" class="page-section py-32 bg-cyber-black">
@@ -1002,7 +569,8 @@
                 <div class="space-y-6">
                     <h3 class="text-2xl font-bold text-cyber-gold">Leadership Opportunities(DCIG/OCIG/CTF ONLY)</h3>
                     <p class="text-gray-300 leading-relaxed">
-                        Ready to take your involvement to the next level? The TTU Cyber Security Club offers various leadership positions for motivated members who want to make a difference in our community.
+                        Ready to take your involvement to the next level? The TTU Cyber Security Club offers various
+                        leadership positions for motivated members who want to make a difference in our community.
                     </p>
                     <div class="space-y-4">
                         <div class="bg-cyber-black p-4 rounded-lg border border-cyber-purple/30">
@@ -1028,21 +596,24 @@
                     <h3 class="text-2xl font-bold text-white mb-6">Application Process</h3>
                     <div class="space-y-4 text-white">
                         <div class="flex items-start space-x-3">
-                            <span class="bg-white text-cyber-purple rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">1</span>
+                            <span
+                                class="bg-white text-cyber-purple rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">1</span>
                             <div>
                                 <h4 class="font-semibold">Submit Application</h4>
                                 <p class="text-sm opacity-90">Complete our leadership application form</p>
                             </div>
                         </div>
                         <div class="flex items-start space-x-3">
-                            <span class="bg-white text-cyber-purple rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">2</span>
+                            <span
+                                class="bg-white text-cyber-purple rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">2</span>
                             <div>
                                 <h4 class="font-semibold">Interview Process</h4>
                                 <p class="text-sm opacity-90">Meet with current leadership team</p>
                             </div>
                         </div>
                         <div class="flex items-start space-x-3">
-                            <span class="bg-white text-cyber-purple rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">3</span>
+                            <span
+                                class="bg-white text-cyber-purple rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">3</span>
                             <div>
                                 <h4 class="font-semibold">Training & Onboarding</h4>
                                 <p class="text-sm opacity-90">Learn the ropes from experienced leaders</p>
@@ -1058,11 +629,9 @@
                             <li>✓ Available for weekly meetings and events</li>
                         </ul>
                     </div>
-                    <a
-                    href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=-Mr-ZsA9LE24uO_w3epG8Mi_ZUxkcp5PktUqmhq3b9xURUo5WEU0S0syQlVORVRWWE0zWFpVMEIwMi4u"
-                    class="w-full bg-white text-cyber-purple font-bold py-3 px-6 rounded-lg mt-6 hover:bg-gray-100 transition-colors text-center inline-block"
-                    >Apply for Leadership</a
-                    >
+                    <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=-Mr-ZsA9LE24uO_w3epG8Mi_ZUxkcp5PktUqmhq3b9xURUo5WEU0S0syQlVORVRWWE0zWFpVMEIwMi4u"
+                        class="w-full bg-white text-cyber-purple font-bold py-3 px-6 rounded-lg mt-6 hover:bg-gray-100 transition-colors text-center inline-block">Apply
+                        for Leadership</a>
                 </div>
             </div>
         </div>
@@ -1076,15 +645,23 @@
                 <div class="space-y-6">
                     <h3 class="text-2xl font-bold text-cyber-gold">Introduction to Vagrant Labs</h3>
                     <p class="text-gray-300 leading-relaxed">
-                        Our asynchronous labs are powered by <a href="https://www.vagrantup.com/" target="_blank" class="text-cyber-gold hover:underline">Vagrant</a>, a tool for building and maintaining portable virtual software development environments. Vagrant allows you to quickly set up and share consistent, reproducible lab environments, ensuring everyone has the same setup for hands-on practice.
+                        Our asynchronous labs are powered by <a href="https://www.vagrantup.com/" target="_blank"
+                            class="text-cyber-gold hover:underline">Vagrant</a>, a tool for building and maintaining
+                        portable virtual software development environments. Vagrant allows you to quickly set up and
+                        share consistent, reproducible lab environments, ensuring everyone has the same setup for
+                        hands-on practice.
                     </p>
                     <div class="bg-cyber-dark p-6 rounded-lg cyber-glow">
                         <h4 class="text-xl font-bold text-cyber-purple mb-4">Why Vagrant?</h4>
                         <ul class="space-y-3 text-gray-300 list-disc list-inside">
-                            <li><strong>Consistency:</strong> Ensures everyone works with the same environment, reducing "it works on my machine" issues.</li>
-                            <li><strong>Portability:</strong> Easily move and share lab environments between different operating systems.</li>
-                            <li><strong>Efficiency:</strong> Quick setup and teardown of complex lab configurations.</li>
-                            <li><strong>Isolation:</strong> Labs run in isolated virtual machines, protecting your host system.</li>
+                            <li><strong>Consistency:</strong> Ensures everyone works with the same environment, reducing
+                                "it works on my machine" issues.</li>
+                            <li><strong>Portability:</strong> Easily move and share lab environments between different
+                                operating systems.</li>
+                            <li><strong>Efficiency:</strong> Quick setup and teardown of complex lab configurations.
+                            </li>
+                            <li><strong>Isolation:</strong> Labs run in isolated virtual machines, protecting your host
+                                system.</li>
                         </ul>
                     </div>
                 </div>
@@ -1092,33 +669,44 @@
                     <h3 class="text-2xl font-bold text-white mb-6">How to Set Up Your Lab</h3>
                     <div class="space-y-4 text-white">
                         <div class="flex items-start space-x-3">
-                            <span class="bg-white text-cyber-purple rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">1</span>
+                            <span
+                                class="bg-white text-cyber-purple rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">1</span>
                             <div>
                                 <h4 class="font-semibold">Install VirtualBox (or VMware)</h4>
-                                <p class="text-sm opacity-90">Vagrant uses a provider like VirtualBox or VMware to manage virtual machines. Download and install it first.</p>
-                                <a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" class="text-white text-sm hover:underline">Download VirtualBox</a>
+                                <p class="text-sm opacity-90">Vagrant uses a provider like VirtualBox or VMware to
+                                    manage virtual machines. Download and install it first.</p>
+                                <a href="https://www.virtualbox.org/wiki/Downloads" target="_blank"
+                                    class="text-white text-sm hover:underline">Download VirtualBox</a>
                             </div>
                         </div>
                         <div class="flex items-start space-x-3">
-                            <span class="bg-white text-cyber-purple rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">2</span>
+                            <span
+                                class="bg-white text-cyber-purple rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">2</span>
                             <div>
                                 <h4 class="font-semibold">Install Vagrant</h4>
-                                <p class="text-sm opacity-90">Download and install Vagrant from their official website.</p>
-                                <a href="https://www.vagrantup.com/downloads" target="_blank" class="text-white text-sm hover:underline">Download Vagrant</a>
+                                <p class="text-sm opacity-90">Download and install Vagrant from their official website.
+                                </p>
+                                <a href="https://www.vagrantup.com/downloads" target="_blank"
+                                    class="text-white text-sm hover:underline">Download Vagrant</a>
                             </div>
                         </div>
                         <div class="flex items-start space-x-3">
-                            <span class="bg-white text-cyber-purple rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">3</span>
+                            <span
+                                class="bg-white text-cyber-purple rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">3</span>
                             <div>
                                 <h4 class="font-semibold">Download Lab Files & Run</h4>
-                                <p class="text-sm opacity-90">Download the lab ZIP file (e.g., from below), extract it, navigate to the extracted folder in your terminal, and run: <code class="bg-cyber-dark px-2 py-1 rounded">vagrant up</code></p>
+                                <p class="text-sm opacity-90">Download the lab ZIP file (e.g., from below), extract it,
+                                    navigate to the extracted folder in your terminal, and run: <code
+                                        class="bg-cyber-dark px-2 py-1 rounded">vagrant up</code></p>
                             </div>
                         </div>
                         <div class="flex items-start space-x-3">
-                            <span class="bg-white text-cyber-purple rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">4</span>
+                            <span
+                                class="bg-white text-cyber-purple rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">4</span>
                             <div>
                                 <h4 class="font-semibold">Access the Lab</h4>
-                                <p class="text-sm opacity-90">Once the VM is up, you can connect to it via many methods like SSH: <code class="bg-cyber-dark px-2 py-1 rounded">vagrant ssh</code></p>
+                                <p class="text-sm opacity-90">Once the VM is up, you can connect to it via many methods
+                                    like SSH: <code class="bg-cyber-dark px-2 py-1 rounded">vagrant ssh</code></p>
                             </div>
                         </div>
                     </div>
@@ -1126,267 +714,237 @@
             </div>
 
 
-        <!-- Lab Download Section -->
-        <div class="mt-20">
-        <h3 class="text-3xl font-bold gradient-text text-center mb-8">
-            Available Labs
-        </h3>
-        <div class="bg-cyber-dark p-8 rounded-lg cyber-glow max-w-4xl mx-auto">
-            <!-- AD-LDAP Lab -->
-            <div
-            class="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 md:space-x-8 py-4"
-            >
-            <div class="flex-grow space-y-2 text-center md:text-left">
-                <h4 class="text-xl font-bold text-white">Lab: Active Directory & LDAP</h4>
-                <p class="text-gray-400 text-sm">
-                Practice setting up, managing, and securing Active Directory and
-                LDAP environments.
-                </p>
-            </div>
-            <div class="flex-shrink-0">
-                <a
-                href="labs/AD-LDAP.zip"
-                download
-                class="bg-cyber-gold text-cyber-black font-bold py-3 px-6 rounded-lg hover:bg-yellow-400 transition-colors flex items-center space-x-2"
-                >
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                    fill-rule="evenodd"
-                    d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                    ></path>
-                </svg>
-                <span>Download Lab (ZIP)</span>
-                </a>
-            </div>
-            </div>
+            <!-- Lab Download Section -->
+            <div class="mt-20">
+                <h3 class="text-3xl font-bold gradient-text text-center mb-8">
+                    Available Labs
+                </h3>
+                <div class="bg-cyber-dark p-8 rounded-lg cyber-glow max-w-4xl mx-auto">
+                    <!-- AD-LDAP Lab -->
+                    <div
+                        class="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 md:space-x-8 py-4">
+                        <div class="flex-grow space-y-2 text-center md:text-left">
+                            <h4 class="text-xl font-bold text-white">Lab: Active Directory & LDAP</h4>
+                            <p class="text-gray-400 text-sm">
+                                Practice setting up, managing, and securing Active Directory and
+                                LDAP environments.
+                            </p>
+                        </div>
+                        <div class="flex-shrink-0">
+                            <a href="labs/AD-LDAP.zip" download
+                                class="bg-cyber-gold text-cyber-black font-bold py-3 px-6 rounded-lg hover:bg-yellow-400 transition-colors flex items-center space-x-2">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Download Lab (ZIP)</span>
+                            </a>
+                        </div>
+                    </div>
 
-            <div class="border-t border-cyber-purple/30 my-6"></div>
+                    <div class="border-t border-cyber-purple/30 my-6"></div>
 
-            <!-- Firewalls Lab -->
-            <div
-            class="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 md:space-x-8 py-4"
-            >
-            <div class="flex-grow space-y-2 text-center md:text-left">
-                <h4 class="text-xl font-bold text-white">Lab: Firewalls</h4>
-                <p class="text-gray-400 text-sm">
-                Learn to configure and manage network firewalls to protect systems
-                from unauthorized access.
-                </p>
-            </div>
-            <div class="flex-shrink-0">
-                <a
-                href="labs/Firewalls.zip"
-                download
-                class="bg-cyber-gold text-cyber-black font-bold py-3 px-6 rounded-lg hover:bg-yellow-400 transition-colors flex items-center space-x-2"
-                >
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                    fill-rule="evenodd"
-                    d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                    ></path>
-                </svg>
-                <span>Download Lab (ZIP)</span>
-                </a>
-            </div>
-            </div>
+                    <!-- Firewalls Lab -->
+                    <div
+                        class="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 md:space-x-8 py-4">
+                        <div class="flex-grow space-y-2 text-center md:text-left">
+                            <h4 class="text-xl font-bold text-white">Lab: Firewalls</h4>
+                            <p class="text-gray-400 text-sm">
+                                Learn to configure and manage network firewalls to protect systems
+                                from unauthorized access.
+                            </p>
+                        </div>
+                        <div class="flex-shrink-0">
+                            <a href="labs/Firewalls.zip" download
+                                class="bg-cyber-gold text-cyber-black font-bold py-3 px-6 rounded-lg hover:bg-yellow-400 transition-colors flex items-center space-x-2">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Download Lab (ZIP)</span>
+                            </a>
+                        </div>
+                    </div>
 
-            <div class="border-t border-cyber-purple/30 my-6"></div>
+                    <div class="border-t border-cyber-purple/30 my-6"></div>
 
-            <!-- Threat Hunting Lab -->
-            <div
-            class="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 md:space-x-8 py-4"
-            >
-            <div class="flex-grow space-y-2 text-center md:text-left">
-                <h4 class="text-xl font-bold text-white">Lab: Threat Hunting</h4>
-                <p class="text-gray-400 text-sm">
-                Develop skills in proactive threat detection and incident response
-                within simulated environments.
-                </p>
-            </div>
-            <div class="flex-shrink-0">
-                <a
-                href="labs/Threat Hunting.zip"
-                download
-                class="bg-cyber-gold text-cyber-black font-bold py-3 px-6 rounded-lg hover:bg-yellow-400 transition-colors flex items-center space-x-2"
-                >
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                    fill-rule="evenodd"
-                    d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                    ></path>
-                </svg>
-                <span>Download Lab (ZIP)</span>
-                </a>
-            </div>
-            </div>
+                    <!-- Threat Hunting Lab -->
+                    <div
+                        class="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 md:space-x-8 py-4">
+                        <div class="flex-grow space-y-2 text-center md:text-left">
+                            <h4 class="text-xl font-bold text-white">Lab: Threat Hunting</h4>
+                            <p class="text-gray-400 text-sm">
+                                Develop skills in proactive threat detection and incident response
+                                within simulated environments.
+                            </p>
+                        </div>
+                        <div class="flex-shrink-0">
+                            <a href="labs/Threat Hunting.zip" download
+                                class="bg-cyber-gold text-cyber-black font-bold py-3 px-6 rounded-lg hover:bg-yellow-400 transition-colors flex items-center space-x-2">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Download Lab (ZIP)</span>
+                            </a>
+                        </div>
+                    </div>
 
-            <div class="border-t border-cyber-purple/30 my-6"></div>
+                    <div class="border-t border-cyber-purple/30 my-6"></div>
 
-            <!-- DB Lab (from WEB-DB) -->
-            <div
-            class="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 md:space-x-8 py-4"
-            >
-            <div class="flex-grow space-y-2 text-center md:text-left">
-                <h4 class="text-xl font-bold text-white">Lab: Web & DB</h4>
-                <p class="text-gray-400 text-sm">
-                Secure databases from common vulnerabilities and attacks,
-                including SQL injection and misconfigurations.
-                </p>
-            </div>
-            <div class="flex-shrink-0">
-                <a
-                href="labs/WEB-DB.zip"
-                download
-                class="bg-cyber-gold text-cyber-black font-bold py-3 px-6 rounded-lg hover:bg-yellow-400 transition-colors flex items-center space-x-2"
-                >
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                    fill-rule="evenodd"
-                    d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                    ></path>
-                </svg>
-                <span>Download Lab (ZIP)</span>
-                </a>
-            </div>
-            </div>
+                    <!-- DB Lab (from WEB-DB) -->
+                    <div
+                        class="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 md:space-x-8 py-4">
+                        <div class="flex-grow space-y-2 text-center md:text-left">
+                            <h4 class="text-xl font-bold text-white">Lab: Web & DB</h4>
+                            <p class="text-gray-400 text-sm">
+                                Secure databases from common vulnerabilities and attacks,
+                                including SQL injection and misconfigurations.
+                            </p>
+                        </div>
+                        <div class="flex-shrink-0">
+                            <a href="labs/WEB-DB.zip" download
+                                class="bg-cyber-gold text-cyber-black font-bold py-3 px-6 rounded-lg hover:bg-yellow-400 transition-colors flex items-center space-x-2">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Download Lab (ZIP)</span>
+                            </a>
+                        </div>
+                    </div>
 
-            <div class="border-t border-cyber-purple/30 my-6"></div>
+                    <div class="border-t border-cyber-purple/30 my-6"></div>
 
-            <!-- WinLin Intro Lab -->
-            <div
-            class="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 md:space-x-8 py-4"
-            >
-            <div class="flex-grow space-y-2 text-center md:text-left">
-                <h4 class="text-xl font-bold text-white">
-                Lab: Windows & Linux Introduction
-                </h4>
-                <p class="text-gray-400 text-sm">
-                Get hands-on with fundamental Windows and Linux commands and basic
-                system administration tasks.
-                </p>
-            </div>
-            <div class="flex-shrink-0">
-                <a
-                href="labs/WinLin Intro.zip"
-                download
-                class="bg-cyber-gold text-cyber-black font-bold py-3 px-6 rounded-lg hover:bg-yellow-400 transition-colors flex items-center space-x-2"
-                >
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                    fill-rule="evenodd"
-                    d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                    ></path>
-                </svg>
-                <span>Download Lab (ZIP)</span>
-                </a>
-            </div>
-            </div>
+                    <!-- WinLin Intro Lab -->
+                    <div
+                        class="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 md:space-x-8 py-4">
+                        <div class="flex-grow space-y-2 text-center md:text-left">
+                            <h4 class="text-xl font-bold text-white">
+                                Lab: Windows & Linux Introduction
+                            </h4>
+                            <p class="text-gray-400 text-sm">
+                                Get hands-on with fundamental Windows and Linux commands and basic
+                                system administration tasks.
+                            </p>
+                        </div>
+                        <div class="flex-shrink-0">
+                            <a href="labs/WinLin Intro.zip" download
+                                class="bg-cyber-gold text-cyber-black font-bold py-3 px-6 rounded-lg hover:bg-yellow-400 transition-colors flex items-center space-x-2">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Download Lab (ZIP)</span>
+                            </a>
+                        </div>
+                    </div>
 
-            <div class="border-t border-cyber-purple/30 mt-8 pt-6 text-center text-gray-400 text-sm">
-            More labs coming soon! Check back regularly for new content.
+                    <div class="border-t border-cyber-purple/30 mt-8 pt-6 text-center text-gray-400 text-sm">
+                        More labs coming soon! Check back regularly for new content.
+                    </div>
+                </div>
             </div>
-        </div>
-        </div>
     </section>
-<!-- The contact info you provided (will be moved into the footer) -->
+    <!-- The contact info you provided (will be moved into the footer) -->
     <!-- Removed from here and placed inside the footer's grid structure -->
 
 
     <!-- Footer -->
     <footer class="bg-cyber-black border-t border-cyber-purple/30 py-12">
-    <div class="container mx-auto px-4">
-        <div class="grid md:grid-cols-4 gap-8 text-center md:text-left">
-        <!-- Original Logo/Description Column -->
-        <div class="space-y-4">
-            <div class="flex items-center space-x-3 justify-center md:justify-start">
-            <img
-                src="photos/logo.png"
-                alt="TTU Cyber Logo"
-                class="w-10 h-10 rounded-lg"
-            />
-            <span class="text-lg font-bold gradient-text">TTU CYBER</span>
-            </div>
-            <p class="text-gray-400 text-sm">
-            Defending the digital frontier at Tennessee Tech University.
-            </p>
-        </div>
-
-        <!-- Contact Section (NEW) -->
-        <div>
-            <h4 class="text-cyber-gold font-semibold mb-4">Contact Us</h4>
-            <div class="space-y-4 text-sm">
-                <!-- Email Section -->
-                <div class="flex items-center space-x-4">
-                    <div class="bg-cyber-gold p-3 rounded-lg flex-shrink-0">
-                        <svg class="w-6 h-6 text-cyber-black" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                        </svg>
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 text-center md:text-left">
+                <!-- Original Logo/Description Column -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3 justify-center md:justify-start">
+                        <img src="photos/logo.png" alt="TTU Cyber Logo" class="w-10 h-10 rounded-lg" />
+                        <span class="text-lg font-bold gradient-text">TTU CYBER</span>
                     </div>
-                    <div>
-                        <div class="text-white font-semibold">Email</div>
-                        <a class="text-gray-400 hover:text-cyber-gold transition-colors">bhbarlow42@tntech.edu</a>
+                    <p class="text-gray-400 text-sm">
+                        Defending the digital frontier at Tennessee Tech University.
+                    </p>
+                </div>
+
+                <!-- Contact Section (NEW) -->
+                <div>
+                    <h4 class="text-cyber-gold font-semibold mb-4">Contact Us</h4>
+                    <div class="space-y-4 text-sm">
+                        <!-- Email Section -->
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-cyber-gold p-3 rounded-lg flex-shrink-0">
+                                <svg class="w-6 h-6 text-cyber-black" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="text-white font-semibold">Email</div>
+                                <a
+                                    class="text-gray-400 hover:text-cyber-gold transition-colors">bhbarlow42@tntech.edu</a>
+                            </div>
+                        </div>
+                        <!-- Discord Section -->
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-cyber-purple p-3 rounded-lg flex-shrink-0">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="text-white font-semibold">Discord</div>
+                                <!-- You can add a link to your Discord invite here if you have one -->
+                                <a href="https://discord.gg/9ZXfDMTVKn" target="_blank"
+                                    class="text-gray-400 hover:text-cyber-gold transition-colors">TTU Cyber Eagles</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <!-- Discord Section -->
-                <div class="flex items-center space-x-4">
-                    <div class="bg-cyber-purple p-3 rounded-lg flex-shrink-0">
-                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <div class="text-white font-semibold">Discord</div>
-                        <!-- You can add a link to your Discord invite here if you have one -->
-                        <a href="https://discord.gg/9ZXfDMTVKn" target="_blank" class="text-gray-400 hover:text-cyber-gold transition-colors">TTU Cyber Eagles</a>
-                    </div>
+
+                <!-- Quick Links Column (Original) -->
+                <div>
+                    <h4 class="text-cyber-gold font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li>
+                            <a href="javascript:void(0)" onclick="showPage('home')"
+                                class="hover:text-cyber-gold transition-colors">Home</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" onclick="showPage('about')"
+                                class="hover:text-cyber-gold transition-colors">About</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" onclick="showPage('competitions')"
+                                class="hover:text-cyber-gold transition-colors">Competitions</a>
+                        </li>
+                        <!-- <li>
+                            <a href="javascript:void(0)" onclick="showPage('ctf')"
+                                class="hover:text-cyber-gold transition-colors">CTF</a>
+                        </li> -->
+                    </ul>
+                </div>
+
+                <!-- Get Involved Column (Original) -->
+                <div>
+                    <h4 class="text-cyber-gold font-semibold mb-4">Get Involved</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li>
+                            <a href="javascript:void(0)" onclick="showPage('leadership')"
+                                class="hover:text-cyber-gold transition-colors">Become a Lead</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" onclick="showPage('calendar')"
+                                class="hover:text-cyber-gold transition-colors">Calender</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
-
-        <!-- Quick Links Column (Original) -->
-        <div>
-            <h4 class="text-cyber-gold font-semibold mb-4">Quick Links</h4>
-            <ul class="space-y-2 text-gray-400 text-sm">
-            <li>
-                <a href="javascript:void(0)" onclick="showPage('home')" class="hover:text-cyber-gold transition-colors">Home</a
-                >
-            </li>
-            <li>
-                <a href="javascript:void(0)" onclick="showPage('about')" class="hover:text-cyber-gold transition-colors">About</a
-                >
-            </li>
-            <li>
-                <a href="javascript:void(0)" onclick="showPage('competitions')" class="hover:text-cyber-gold transition-colors">Competitions</a
-                >
-            </li>
-            <li>
-                <a href="javascript:void(0)" onclick="showPage('ctf')" class="hover:text-cyber-gold transition-colors">CTF</a
-                >
-            </li>
-            </ul>
-        </div>
-
-        <!-- Get Involved Column (Original) -->
-        <div>
-            <h4 class="text-cyber-gold font-semibold mb-4">Get Involved</h4>
-            <ul class="space-y-2 text-gray-400 text-sm">
-            <li>
-                <a href="javascript:void(0)" onclick="showPage('leadership')" class="hover:text-cyber-gold transition-colors">Become a Lead</a
-                >
-            </li>
-            <li>
-                <a href="javascript:void(0)" onclick="showPage('calendar')" class="hover:text-cyber-gold transition-colors">Calender</a
-                >
-            </li>
-            </ul>
-        </div>
-        </div>
-    </div>
     </footer>
 
     <script>
@@ -1396,13 +954,13 @@
             document.querySelectorAll('.page-section').forEach(section => {
                 section.classList.remove('active');
             });
-            
+
             // Show selected section
             const targetSection = document.getElementById(pageId);
             if (targetSection) {
                 targetSection.classList.add('active');
             }
-            
+
             // Update navigation active states
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.classList.remove('active');
@@ -1410,16 +968,16 @@
                     link.classList.add('active');
                 }
             });
-            
+
             // Close mobile menu if open
             const mobileMenu = document.getElementById('mobileMenu');
             if (mobileMenu) {
                 mobileMenu.classList.add('hidden');
             }
-            
+
             // Scroll to top
             window.scrollTo(0, 0);
-            
+
             // Initialize calendar if calendar page is shown
             if (pageId === 'calendar') {
                 setTimeout(() => {
@@ -1440,7 +998,7 @@
         // Image carousel functionality
         let currentSlide = 0;
         const slides = document.querySelectorAll('.carousel-image');
-        
+
         function showSlide(index) {
             slides.forEach((slide, i) => {
                 slide.style.opacity = i === index ? '1' : '0';
@@ -1478,7 +1036,7 @@
         }
 
         // Initialize on page load
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             updateCalendarHeader();
             // Make sure home page is visible on load
             showPage('home');
@@ -1491,17 +1049,17 @@
             let currentIndex = 0;
 
             function showSlide(index) {
-            carouselItems.forEach((item, i) => {
-                item.style.opacity = '0'; // Hide all slides
-                if (i === index) {
-                item.style.opacity = '1'; // Show the current slide
-                }
-            });
+                carouselItems.forEach((item, i) => {
+                    item.style.opacity = '0'; // Hide all slides
+                    if (i === index) {
+                        item.style.opacity = '1'; // Show the current slide
+                    }
+                });
             }
 
             function nextSlide() {
-            currentIndex = (currentIndex + 1) % carouselItems.length;
-            showSlide(currentIndex);
+                currentIndex = (currentIndex + 1) % carouselItems.length;
+                showSlide(currentIndex);
             }
 
             // Initial display
@@ -1512,4 +1070,5 @@
         });
     </script>
 </body>
+
 </html>
