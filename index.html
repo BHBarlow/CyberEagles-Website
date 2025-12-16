@@ -6,40 +6,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TTU Cyber Security Club</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Courier New', 'monospace'],
+                    },
                     colors: {
-                        'cyber-black': '#0a0a0a',
-                        'cyber-gold': '#ffd700',
-                        'cyber-purple': '#8b5cf6',
-                        'cyber-dark': '#1a1a1a'
+                        'cyber-bg': '#050505',
+                        'cyber-card': '#121212',
+                        'cyber-gold': '#FFD700',
+                        'cyber-purple': '#8B5CF6',
+                        'cyber-accent': '#a78bfa',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out forwards',
                     }
                 }
             }
         }
     </script>
     <style>
-        .gradient-text {
-            background: linear-gradient(45deg, #ffd700, #8b5cf6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #050505;
+            color: #e5e5e5;
         }
 
-        .cyber-glow {
-            box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
         }
 
-        .carousel-image {
-            transition: opacity 1s ease-in-out;
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        /* Glassmorphism Card Style */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(139, 92, 246, 0.5);
+            /* Stronger hover glow */
+            box-shadow: 0 0 30px rgba(139, 92, 246, 0.2);
+        }
+
+        /* Cyber Glow Utility */
+        .cyber-glow-text {
+            text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+        }
+
+        /* Minimal Section Titles */
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 3rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: #FFD700;
+            /* Gold underline */
+            border-radius: 2px;
         }
 
         /* Page transition styles */
         .page-section {
             display: none;
-            animation: fadeIn 0.3s ease-in-out;
+            opacity: 0;
+            animation: fadeIn 0.4s ease-out forwards;
         }
 
         .page-section.active {
@@ -58,15 +126,37 @@
             }
         }
 
-        .nav-link.active {
-            color: #ffd700 !important;
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #FFD700;
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* Carousel Transitions */
+        .carousel-image {
+            transition: opacity 1s ease-in-out;
         }
     </style>
 </head>
 
-<body class="bg-cyber-black text-white font-mono">
+<body class="bg-cyber-bg text-gray-200 font-sans antialiased selection:bg-cyber-purple selection:text-white">
     <!-- Header -->
-    <header class="bg-cyber-dark border-b border-cyber-purple/30 sticky top-0 z-50">
+    <header
+        class="fixed w-full top-0 z-50 transition-all duration-300 bg-cyber-bg/80 backdrop-blur-md border-b border-white/5">
         <div class="container mx-auto px-4 py-4">
             <div class="flex items-center justify-between">
                 <!-- Logo -->
@@ -124,32 +214,50 @@
     <!-- Home Section -->
     <section id="home" class="page-section active">
         <!-- Hero Section -->
-        <div class="min-h-screen flex items-center py-0">
-            <div class="container mx-auto px-4">
-                <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="min-h-screen flex items-center relative overflow-hidden">
+            <!-- Background decorative elements -->
+            <div
+                class="absolute top-0 left-1/4 w-96 h-96 bg-cyber-purple/20 rounded-full blur-3xl opacity-30 pointer-events-none">
+            </div>
+            <div
+                class="absolute bottom-0 right-1/4 w-96 h-96 bg-cyber-gold/10 rounded-full blur-3xl opacity-30 pointer-events-none">
+            </div>
+
+            <div class="container mx-auto px-4 z-10">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
                     <!-- Left Content -->
-                    <div class="space-y-8">
-                        <h1 class="text-5xl lg:text-8xl font-bold">
-                            <span class="gradient-text">TTU Cyber</span><br>
+                    <div class="space-y-8 animate-fade-in">
+                        <h2 class="text-2xl font-bold text-cyber-gold mb-4 tracking-wide uppercase">
+                            Tennessee Tech University
+                        </h2>
+                        <h1 class="text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6">
+                            Defending the <br>
+                            <span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-cyber-purple to-cyber-gold">Digital
+                                Frontier</span>
                         </h1>
-                        <p class="text-xl text-white leading-relaxed">
-                            Join us in exploring cybersecurity, competing in Competitions, and building the next
+                        <p class="text-lg text-gray-400 leading-relaxed max-w-lg mb-8">
+                            Join us in exploring cybersecurity, competing in national competitions, and building the
+                            next
                             generation of security professionals.
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4">
                             <button onclick="joinDiscord()"
-                                class="bg-cyber-purple hover:bg-purple-600 text-white px-8 py-4 rounded-lg font-semibold transition-all cyber-glow">
-                                🎮 Join Discord
+                                class="group relative px-8 py-4 bg-cyber-purple text-white rounded-lg font-semibold overflow-hidden transition-all hover:scale-105 hover:bg-purple-600 shadow-lg shadow-purple-900/40 hover:shadow-purple-700/60">
+                                <span class="relative z-10 flex items-center">
+                                    <span class="mr-2 text-xl">🎮</span>
+                                    Join Discord
+                                </span>
                             </button>
                             <button onclick="showPage('about')"
-                                class="border border-cyber-gold text-cyber-gold hover:bg-cyber-gold hover:text-cyber-black px-8 py-4 rounded-lg font-semibold transition-all">
+                                class="px-8 py-4 rounded-lg font-semibold border border-white/20 hover:bg-white/10 transition-all text-white backdrop-blur-sm">
                                 Learn More
                             </button>
                         </div>
                     </div>
 
                     <!-- Right Content - Image Carousel -->
-                    <div class="relative h-96 rounded-lg overflow-hidden cyber-glow">
+                    <div class="relative h-96 rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
                         <div id="carousel" class="relative w-full h-full">
                             <div
                                 class="carousel-item absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
@@ -185,9 +293,11 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="page-section py-32 ">
+    <section id="about" class="page-section py-24">
         <div class="container mx-auto px-4">
-            <h2 class="text-6xl font-bold gradient-text text-center mb-12">TTU Cyber Security Clubs</h2>
+            <div class="text-center mb-16">
+                <h2 class="section-title text-4xl md:text-5xl font-bold text-white">TTU Cyber Security Clubs</h2>
+            </div>
             <div class="grid lg:grid-cols-2 gap-12 items-start">
                 <div class="space-y-6">
                     <p class="text-lg text-gray-300 leading-relaxed">
@@ -211,7 +321,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="bg-gradient-to-br from-cyber-purple to-cyber-gold p-8 rounded-lg cyber-glow">
+                <div class="glass-card p-8 rounded-2xl relative overflow-hidden">
+                    <div
+                        class="absolute top-0 right-0 w-32 h-32 bg-cyber-purple/20 rounded-full blur-2xl -mr-16 -mt-16 pointer-events-none">
+                    </div>
                     <h3 class="text-2xl font-bold text-white mb-6">What We Offer</h3>
                     <ul class="space-y-4 text-white">
                         <li class="flex items-center space-x-3">
@@ -236,15 +349,15 @@
         </div>
         <div class="mt-20 max-w-[80vw] mx-auto">
             <!-- Defensive Security Club(About Page) -->
-            <div class="p-8 rounded-lg mb-8 cyber-glow bg-cyber-black">
+            <div class="glass-card p-10 rounded-2xl mb-8">
                 <div class="container mx-auto px-4 mt-16">
-                    <h2 class="text-4xl font-bold text-blue-700 text-center mb-12">
+                    <h2 class="text-4xl font-bold text-blue-400 text-center mb-12">
                         Defensive Cybersecurity Interest Group (DCIG) (Beginner)
                     </h2>
                     <div class="space-y-6">
                         <p class="text-lg text-white leading-relaxed">
                             The Tennessee Tech Defensive Cyber Interest Group
-                            <span class="font-bold text-blue-700">DCIG</span> is a student-led group of aspiring
+                            <span class="font-bold text-blue-400">DCIG</span> is a student-led group of aspiring
                             cybersecurity professionals with the goal of
                             educating the next generation of defensive security experts. We hold biweekly meetings that
                             cover topics ranging from the basics
@@ -253,21 +366,21 @@
                             provide applicable knowledge for industry certifications and careers.
                         </p>
                         <p class="text-lg text-white leading-relaxed">
-                            <span class="font-bold text-blue-700">Lead: </span>Chandler Cook
-                            <span class="font-bold text-blue-700">Discord: </span>kyr0sz
+                            <span class="font-bold text-blue-400">Lead: </span>Chandler Cook
+                            <span class="font-bold text-blue-400">Discord: </span>kyr0sz
                     </div>
                 </div>
             </div>
             <!-- Offensive Security Club(About Page) -->
-            <div class="p-8 rounded-lg mb-8 cyber-glow bg-cyber-black">
+            <div class="glass-card p-10 rounded-2xl mb-8">
                 <div class="container mx-auto px-4 mt-16">
-                    <h2 class="text-4xl font-bold text-red-700 text-center mb-12">
+                    <h2 class="text-4xl font-bold text-red-400 text-center mb-12">
                         Offensive Cybersecurity Interest Group (OCIG) (Beginner)
                     </h2>
                     <div class="space-y-6">
                         <p class="text-lg text-white leading-relaxed">
                             The Tennessee Tech Offensive Cyber Interest Group
-                            <span class="font-bold text-red-700">OCIG</span> is a student-led group dedicated to
+                            <span class="font-bold text-red-400">OCIG</span> is a student-led group dedicated to
                             exploring the world of offensive security.
                             We meet biweekly to cover topics in red teaming, penetration testing, and other areas of
                             ethical hacking. We want to help members
@@ -278,21 +391,21 @@
                             grow, and prepare for careers in cybersecurity.
                         </p>
                         <p class="text-lg text-white leading-relaxed">
-                            <span class="font-bold text-red-700">Lead: </span>Nicholas Liverett
-                            <span class="font-bold text-red-700">Discord: </span>nliverett7
+                            <span class="font-bold text-red-400">Lead: </span>Nicholas Liverett
+                            <span class="font-bold text-red-400">Discord: </span>nliverett7
                     </div>
                 </div>
             </div>
             <!-- Capture The Flag Club(About Page) -->
-            <div class="p-8 rounded-lg mb-8 cyber-glow bg-cyber-black">
+            <div class="glass-card p-10 rounded-2xl mb-8">
                 <div class="container mx-auto px-4 mt-16">
-                    <h2 class="text-4xl font-bold text-green-700 text-center mb-12">
+                    <h2 class="text-4xl font-bold text-green-400 text-center mb-12">
                         CTF Cybersecurity Interest Group (CCIG) (Beginner)
                     </h2>
                     <div class="space-y-6">
                         <p class="text-lg text-white leading-relaxed">
                             The Tennessee Tech Capture the Flag Cyber Interest Group
-                            <span class="font-bold text-green-700">CCIG</span> is a student-led group where members can
+                            <span class="font-bold text-green-400">CCIG</span> is a student-led group where members can
                             hone their skills across the various domains of cybersecurity.
                             This is done through the use of Capture the Flag competitions, where students are asked to
                             find a "flag", a string of text, that is hidden in websites or programs.
@@ -302,13 +415,13 @@
                             continue in cybersecurity.
                         </p>
                         <p class="text-lg text-white leading-relaxed">
-                            <span class="font-bold text-green-700">Lead: </span>Jmac Brentlinger
-                            <span class="font-bold text-green-700">Discord: </span>ultramac16
+                            <span class="font-bold text-green-400">Lead: </span>Jmac Brentlinger
+                            <span class="font-bold text-green-400">Discord: </span>ultramac16
                     </div>
                 </div>
             </div>
             <!-- WOMEN IN CYBER SECURITY(About Page) -->
-            <div class="p-8 rounded-lg mb-8 cyber-glow bg-cyber-black">
+            <div class="glass-card p-10 rounded-2xl mb-8">
                 <div class="container mx-auto px-4 mt-16">
                     <h2 class="text-4xl font-bold text-cyber-purple text-center mb-12">
                         Women In Cyber Security Club (WICYS) (Beginner)
@@ -334,7 +447,7 @@
                 </div>
             </div>
             <!-- Cyber Eagles(About Page) -->
-            <div class="p-8 rounded-lg mb-8 cyber-glow bg-cyber-black">
+            <div class="glass-card p-10 rounded-2xl mb-8">
                 <div class="container mx-auto px-4 mt-16">
                     <h2 class="text-4xl font-bold text-cyber-gold text-center mb-12">
                         Cyber Eagles Club (Beginner)
@@ -386,14 +499,16 @@
     </section>
 
     <!-- Competitions Section -->
-    <section id="competitions" class="page-section py-32">
+    <section id="competitions" class="page-section py-24">
         <div class="container mx-auto px-4">
-            <h2 class="text-6xl font-bold gradient-text text-center mb-12">Competitions</h2>
+            <div class="text-center mb-16">
+                <h2 class="section-title text-4xl md:text-5xl font-bold text-white">Competitions</h2>
+            </div>
             <div class="mt-20 max-w-[80vw] mx-auto">
                 <!-- CCDC Card -->
-                <div class="p-8 rounded-lg mb-8 cyber-glow bg-cyber-black border border-cyber-purple/20">
+                <div class="glass-card p-10 rounded-2xl mb-8 group border border-white/5 hover:border-cyber-purple/30">
                     <div class="container mx-auto px-4 mt-8">
-                        <h2 class="text-3xl md:text-4xl font-bold text-blue-600 text-center mb-4">
+                        <h2 class="text-3xl md:text-4xl font-bold text-blue-400 text-center mb-4">
                             Collegiate Cyber Defense Competition (CCDC)
                         </h2>
                         <h3 class="text-xl text-blue-400 text-center mb-8">(SECCDC Region)</h3>
@@ -413,9 +528,9 @@
                 </div>
 
                 <!-- CPTC Card -->
-                <div class="p-8 rounded-lg mb-8 cyber-glow bg-cyber-black border border-cyber-purple/20">
+                <div class="glass-card p-10 rounded-2xl mb-8 group border border-white/5 hover:border-cyber-purple/30">
                     <div class="container mx-auto px-4 mt-8">
-                        <h2 class="text-3xl md:text-4xl font-bold text-red-600 text-center mb-4">
+                        <h2 class="text-3xl md:text-4xl font-bold text-red-400 text-center mb-4">
                             Collegiate Penetration Testing Competition (CPTC)
                         </h2>
                         <h3 class="text-xl text-red-400 text-center mb-8">(Central Region Host)</h3>
@@ -434,7 +549,7 @@
                 </div>
 
                 <!-- DOE CyberForce Card -->
-                <div class="p-8 rounded-lg mb-8 cyber-glow bg-cyber-black border border-cyber-purple/20">
+                <div class="glass-card p-10 rounded-2xl mb-8 group border border-white/5 hover:border-cyber-purple/30">
                     <div class="container mx-auto px-4 mt-8">
                         <h2 class="text-3xl md:text-4xl font-bold text-cyber-gold text-center mb-4">
                             DOE CyberForce Competition
@@ -459,7 +574,7 @@
                 </div>
 
                 <!-- NCL Card -->
-                <div class="p-8 rounded-lg mb-8 cyber-glow bg-cyber-black border border-cyber-purple/20">
+                <div class="glass-card p-10 rounded-2xl mb-8 group border border-white/5 hover:border-cyber-purple/30">
                     <div class="container mx-auto px-4 mt-8">
                         <h2 class="text-3xl md:text-4xl font-bold text-cyber-purple text-center mb-4">
                             National Cyber League (NCL)
@@ -483,12 +598,13 @@
     </section>
 
     <!-- Calendar Section -->
-    <section id="calendar" class="page-section py-32 ">
+    <section id="calendar" class="page-section py-24">
         <div class="container mx-auto px-4">
-            <h2 class="text-6xl font-bold gradient-text text-center mb-12">Spring 2026 Coming Soon...</h2>
-
+            <div class="text-center mb-16">
+                <h2 class="section-title text-4xl md:text-5xl font-bold text-white">Spring 2026 Coming Soon...</h2>
+            </div>
             <!-- Calendar Content -->
-            <div class="max-w-6xl mx-auto bg-cyber-dark p-8 rounded-lg cyber-glow">
+            <div class="max-w-6xl mx-auto glass-card p-10 rounded-2xl">
                 <p class="text-lg text-gray-300 text-center mb-8">
                     Stay up-to-date with all our upcoming meetings and events across our interest groups.
                 </p>
@@ -562,18 +678,22 @@
     -->
 
     <!-- Leadership Section -->
-    <section id="leadership" class="page-section py-32 bg-cyber-black">
+    <section id="leadership" class="page-section py-24">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold gradient-text text-center mb-12">Become a Leader</h2>
+            <div class="text-center mb-16">
+                <h2 class="section-title text-4xl md:text-5xl font-bold text-white">Become a Leader</h2>
+            </div>
             <div class="grid lg:grid-cols-2 gap-12">
-                <div class="space-y-6">
-                    <h3 class="text-2xl font-bold text-cyber-gold">Leadership Opportunities(DCIG/OCIG/CTF ONLY)</h3>
+                <div class="space-y-8">
+                    <h3 class="text-2xl font-bold text-cyber-gold">Leadership Opportunities <span
+                            class="text-sm font-normal text-gray-400 block mt-1">(DCIG/OCIG/CTF ONLY)</span></h3>
                     <p class="text-gray-300 leading-relaxed">
                         Ready to take your involvement to the next level? The TTU Cyber Security Club offers various
                         leadership positions for motivated members who want to make a difference in our community.
                     </p>
                     <div class="space-y-4">
-                        <div class="bg-cyber-black p-4 rounded-lg border border-cyber-purple/30">
+                        <div
+                            class="bg-white/5 p-6 rounded-xl border border-white/10 hover:border-cyber-purple/50 transition-colors">
                             <h4 class="text-lg font-bold text-cyber-purple mb-2">Officer Positions</h4>
                             <ul class="text-gray-300 space-y-1">
                                 <li>• Lead</li>
@@ -581,7 +701,8 @@
                                 <li>• Mentor</li>
                             </ul>
                         </div>
-                        <div class="bg-cyber-black p-4 rounded-lg border border-cyber-gold/30">
+                        <div
+                            class="bg-white/5 p-6 rounded-xl border border-white/10 hover:border-cyber-gold/50 transition-colors">
                             <h4 class="text-lg font-bold text-cyber-gold mb-2">Team Task</h4>
                             <ul class="text-gray-300 space-y-1">
                                 <li>• Teach Meetings</li>
@@ -592,7 +713,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="bg-gradient-to-br from-cyber-gold to-cyber-purple p-8 rounded-lg cyber-glow">
+                <div class="glass-card p-10 rounded-2xl relative overflow-hidden">
+                    <div
+                        class="absolute top-0 right-0 w-32 h-32 bg-cyber-gold/20 rounded-full blur-2xl -mr-16 -mt-16 pointer-events-none">
+                    </div>
                     <h3 class="text-2xl font-bold text-white mb-6">Application Process</h3>
                     <div class="space-y-4 text-white">
                         <div class="flex items-start space-x-3">
@@ -638,9 +762,11 @@
     </section>
 
     <!-- Labs Section -->
-    <section id="Labs" class="page-section py-32">
+    <section id="Labs" class="page-section py-24">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold gradient-text text-center mb-12">Cyber Lab Environment</h2>
+            <div class="text-center mb-16">
+                <h2 class="section-title text-4xl md:text-5xl font-bold text-white">Cyber Lab Environment</h2>
+            </div>
             <div class="grid lg:grid-cols-2 gap-12 items-start">
                 <div class="space-y-6">
                     <h3 class="text-2xl font-bold text-cyber-gold">Introduction to Vagrant Labs</h3>
@@ -651,7 +777,7 @@
                         share consistent, reproducible lab environments, ensuring everyone has the same setup for
                         hands-on practice.
                     </p>
-                    <div class="bg-cyber-dark p-6 rounded-lg cyber-glow">
+                    <div class="glass-card p-8 rounded-2xl">
                         <h4 class="text-xl font-bold text-cyber-purple mb-4">Why Vagrant?</h4>
                         <ul class="space-y-3 text-gray-300 list-disc list-inside">
                             <li><strong>Consistency:</strong> Ensures everyone works with the same environment, reducing
@@ -665,7 +791,10 @@
                         </ul>
                     </div>
                 </div>
-                <div class="bg-gradient-to-br from-cyber-purple to-cyber-gold p-8 rounded-lg cyber-glow">
+                <div class="glass-card p-10 rounded-2xl relative overflow-hidden">
+                    <div
+                        class="absolute top-0 right-0 w-32 h-32 bg-cyber-purple/20 rounded-full blur-2xl -mr-16 -mt-16 pointer-events-none">
+                    </div>
                     <h3 class="text-2xl font-bold text-white mb-6">How to Set Up Your Lab</h3>
                     <div class="space-y-4 text-white">
                         <div class="flex items-start space-x-3">
@@ -716,10 +845,10 @@
 
             <!-- Lab Download Section -->
             <div class="mt-20">
-                <h3 class="text-3xl font-bold gradient-text text-center mb-8">
-                    Available Labs
-                </h3>
-                <div class="bg-cyber-dark p-8 rounded-lg cyber-glow max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h3 class="text-2xl font-bold text-white">Available Labs</h3>
+                </div>
+                <div class="glass-card p-10 rounded-2xl max-w-4xl mx-auto">
                     <!-- AD-LDAP Lab -->
                     <div
                         class="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 md:space-x-8 py-4">
@@ -856,7 +985,7 @@
 
 
     <!-- Footer -->
-    <footer class="bg-cyber-black border-t border-cyber-purple/30 py-12">
+    <footer class="bg-cyber-bg border-t border-white/5 py-16 relative z-10">
         <div class="container mx-auto px-4">
             <div class="grid md:grid-cols-4 gap-8 text-center md:text-left">
                 <!-- Original Logo/Description Column -->
