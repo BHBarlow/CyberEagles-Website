@@ -171,6 +171,9 @@
                         class="nav-link text-white hover:text-cyber-gold transition-colors">About</a>
                     <a href="javascript:void(0)" onclick="showPage('competitions')"
                         class="nav-link text-white hover:text-cyber-gold transition-colors">Competitions</a>
+
+                    <!-- <a href="javascript:void(0)" onclick="showPage('ctf')"
+                        class="nav-link text-white hover:text-cyber-gold transition-colors">CTF</a> -->
                     <a href="javascript:void(0)" onclick="showPage('leadership')"
                         class="nav-link text-white hover:text-cyber-gold transition-colors">Become a Lead</a>
                     <a href="javascript:void(0)" onclick="showPage('Labs')"
@@ -195,6 +198,9 @@
                     class="block py-2 text-white hover:text-cyber-gold transition-colors">About</a>
                 <a href="javascript:void(0)" onclick="showPage('competitions')"
                     class="block py-2 text-white hover:text-cyber-gold transition-colors">Competitions</a>
+
+                <!-- <a href="javascript:void(0)" onclick="showPage('ctf')"
+                    class="block py-2 text-white hover:text-cyber-gold transition-colors">CTF</a> -->
                 <a href="javascript:void(0)" onclick="showPage('leadership')"
                     class="block py-2 text-white hover:text-cyber-gold transition-colors">Become a Lead</a>
                 <a href="javascript:void(0)" onclick="showPage('Labs')"
@@ -273,6 +279,46 @@
                                     class="w-full h-full object-cover" />
                                 <div class="absolute inset-x-0 bottom-0 left-1  flex items-center h-16">
                                     <h3 class="text-2xl font-bold text-white">CPTC Regionals 1st</h3>
+                                </div>
+                            </div>
+                            <div
+                                class="carousel-item absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
+                                <img src="photos/carousel/CPTC-3rd-Regionals.jpg" alt="CPTC 3rd Regionals"
+                                    class="w-full h-full object-cover" />
+                                <div class="absolute inset-x-0 bottom-0 left-1 flex items-center h-16">
+                                    <h3 class="text-2xl font-bold text-white">CPTC Regionals 3rd</h3>
+                                </div>
+                            </div>
+                            <div
+                                class="carousel-item absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
+                                <img src="photos/carousel/ISTS-2nd.jpg" alt="ISTS 2nd Place"
+                                    class="w-full h-full object-cover" />
+                                <div class="absolute inset-x-0 bottom-0 left-1 flex items-center h-16">
+                                    <h3 class="text-2xl font-bold text-white">ISTS 2nd</h3>
+                                </div>
+                            </div>
+                            <div
+                                class="carousel-item absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
+                                <img src="photos/carousel/SECCDC-2nd.jpg" alt="SECCDC 2nd Place"
+                                    class="w-full h-full object-cover" />
+                                <div class="absolute inset-x-0 bottom-0 left-1 flex items-center h-16">
+                                    <h3 class="text-2xl font-bold text-white">SECCDC 2nd</h3>
+                                </div>
+                            </div>
+                            <div
+                                class="carousel-item absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
+                                <img src="photos/carousel/cyberforce-2nd.jpeg" alt="CyberForce 2nd Place"
+                                    class="w-full h-full object-cover" />
+                                <div class="absolute inset-x-0 bottom-0 left-1 flex items-center h-16">
+                                    <h3 class="text-2xl font-bold text-white">CyberForce 2nd</h3>
+                                </div>
+                            </div>
+                            <div
+                                class="carousel-item absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
+                                <img src="photos/carousel/info-sec-1st.jpeg" alt="InfoSec 1st Place"
+                                    class="w-full h-full object-cover" />
+                                <div class="absolute inset-x-0 bottom-0 left-1 flex items-center h-16">
+                                    <h3 class="text-2xl font-bold text-white">InfoSec 1st</h3>
                                 </div>
                             </div>
                         </div>
@@ -589,24 +635,7 @@
         </div>
     </section>
 
-    <!-- Calendar Section 
-    <section id="calendar" class="page-section py-24">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="section-title text-4xl md:text-5xl font-bold text-white">Spring 2026 Coming Soon...</h2>
-            </di v>
-            Calendar Content 
-            <div class="max-w-6xl mx-auto glass-card p-10 rounded-2xl">
-                <p class="text-lg text-gray-300 text-center mb-8">
-                    Stay up-to-date with all our upcoming meetings and events across our interest groups.
-                </p>
 
-
-            </div>
-        </div>
-        End Calendar Content
-
-    </section> -->
 
     <!-- CTF Section 
     <section id="ctf" class="page-section py-32">
@@ -1058,6 +1087,7 @@
                             <a href="javascript:void(0)" onclick="showPage('leadership')"
                                 class="hover:text-cyber-gold transition-colors">Become a Lead</a>
                         </li>
+
                     </ul>
                 </div>
             </div>
@@ -1095,13 +1125,7 @@
             // Scroll to top
             window.scrollTo(0, 0);
 
-            // Initialize calendar if calendar page is shown
-            if (pageId === 'calendar') {
-                setTimeout(() => {
-                    updateCalendarHeader();
-                    generateCalendar(currentMonth, currentYear, 'full-calendar-grid');
-                }, 100);
-            }
+
         }
 
         // Navigation functionality
@@ -1154,7 +1178,7 @@
 
         // Initialize on page load
         document.addEventListener('DOMContentLoaded', function () {
-            updateCalendarHeader();
+
             // Make sure home page is visible on load
             showPage('home');
         });
