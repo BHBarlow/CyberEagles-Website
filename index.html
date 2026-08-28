@@ -239,12 +239,11 @@
                                     Join Discord
                                 </span>
                             </button>
-                            <a href="https://cybereagles.org/Calender.ics"
-                                download="CyberEagles-Calendar.ics"
-                                class="group relative px-8 py-4 bg-transparent text-cyber-accent rounded-lg font-semibold border border-cyber-purple hover:bg-cyber-purple/15 transition-all hover:scale-105 flex items-center no-underline">
-                                <span class="mr-2 text-xl">📅</span>
-                                Subscribe to Calendar
-                            </a>
+                            <button id="copyCalBtn" onclick="copyCalendarLink()"
+                                class="group relative px-8 py-4 bg-transparent text-cyber-accent rounded-lg font-semibold border border-cyber-purple hover:bg-cyber-purple/15 transition-all hover:scale-105 flex items-center">
+                                <span id="copyCalIcon" class="mr-2 text-xl">📅</span>
+                                <span id="copyCalText">Copy Calendar Link</span>
+                            </button>
                             <button onclick="showPage('about')"
                                 class="px-8 py-4 rounded-lg font-semibold border border-white/20 hover:bg-white/10 transition-all text-white backdrop-blur-sm">
                                 Learn More
@@ -1152,6 +1151,36 @@
         // Interactive functions
         function joinDiscord() {
             window.open('https://discord.gg/9ZXfDMTVKn', '_blank');
+        }
+
+        function copyCalendarLink() {
+            const url = 'https://cybereagles.org/Calender.ics';
+            navigator.clipboard.writeText(url).then(() => {
+                const icon = document.getElementById('copyCalIcon');
+                const text = document.getElementById('copyCalText');
+                icon.textContent = '✅';
+                text.textContent = 'Copied!';
+                setTimeout(() => {
+                    icon.textContent = '📅';
+                    text.textContent = 'Copy Calendar Link';
+                }, 2000);
+            }).catch(() => {
+                // Fallback for older browsers
+                const el = document.createElement('textarea');
+                el.value = url;
+                document.body.appendChild(el);
+                el.select();
+                document.execCommand('copy');
+                document.body.removeChild(el);
+                const icon = document.getElementById('copyCalIcon');
+                const text = document.getElementById('copyCalText');
+                icon.textContent = '✅';
+                text.textContent = 'Copied!';
+                setTimeout(() => {
+                    icon.textContent = '📅';
+                    text.textContent = 'Copy Calendar Link';
+                }, 2000);
+            });
         }
 
         function joinCTF() {
