@@ -177,6 +177,8 @@
                         class="nav-link text-white hover:text-cyber-gold transition-colors">Become a Lead</a>
                     <a href="javascript:void(0)" onclick="showPage('Labs')"
                         class="nav-link text-white hover:text-cyber-gold transition-colors">Labs</a>
+                    <a href="javascript:void(0)" onclick="showPage('resources')"
+                        class="nav-link text-white hover:text-cyber-gold transition-colors">Resources</a>
 
                 </nav>
 
@@ -204,6 +206,8 @@
                     class="block py-2 text-white hover:text-cyber-gold transition-colors">Become a Lead</a>
                 <a href="javascript:void(0)" onclick="showPage('Labs')"
                     class="block py-2 text-white hover:text-cyber-gold transition-colors">Labs</a>
+                <a href="javascript:void(0)" onclick="showPage('resources')"
+                    class="block py-2 text-cyber-gold font-semibold hover:text-white transition-colors">Resources</a>
             </div>
         </div>
     </header>
@@ -222,8 +226,7 @@
                         </h2>
                         <h1 class="text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6">
                             Defending the <br>
-                            <span
-                                class="text-cyber-gold">Digital
+                            <span class="text-cyber-gold">Digital
                                 Frontier</span>
                         </h1>
                         <p class="text-lg text-gray-400 leading-relaxed max-w-lg mb-8">
@@ -357,8 +360,7 @@
                     </div>
                 </div>
                 <div class="glass-card p-8 rounded-2xl relative overflow-hidden">
-                    <div
-                        class="hidden">
+                    <div class="hidden">
                     </div>
                     <h3 class="text-2xl font-bold text-white mb-6">What We Offer</h3>
                     <ul class="space-y-4 text-white">
@@ -807,8 +809,7 @@
                     </div>
                 </div>
                 <div class="glass-card p-10 rounded-2xl relative overflow-hidden">
-                    <div
-                        class="hidden">
+                    <div class="hidden">
                     </div>
                     <h3 class="text-2xl font-bold text-white mb-6">How to Set Up Your Lab</h3>
                     <div class="space-y-4 text-white">
@@ -988,16 +989,131 @@
                             </a>
                         </div>
                     </div>
-
-                    <div class="border-t border-white/10 mt-8 pt-6 text-center text-gray-400 text-sm">
-                        More labs coming soon! Check back regularly for new content.
-                    </div>
                 </div>
             </div>
     </section>
     <!-- The contact info you provided (will be moved into the footer) -->
     <!-- Removed from here and placed inside the footer's grid structure -->
 
+
+    <!-- Resources Section -->
+    <section id="resources" class="page-section py-24">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="section-title text-4xl md:text-5xl font-bold text-white mb-4">Resources</h2>
+                <p class="text-gray-400 text-sm max-w-2xl mx-auto">
+                    Note: Links may occasionally change endpoints. If a link is broken, try navigating to the main domain/website shown in the link.
+                </p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-3 mb-10" id="resource-tabs">
+                <button id="tab-penetrationtestingoffensiveredteam"
+                    onclick="showResourceCategory('penetrationtestingoffensiveredteam')"
+                    class="resource-tab px-5 py-2 rounded-full border border-white/10 hover:border-cyber-gold/50 transition-all text-sm font-semibold tracking-wide bg-transparent text-gray-300 hover:text-white shadow-sm shadow-black/20 hover:shadow-cyber-gold/20">Penetration
+                    Testing / Offensive / Red Team</button>
+                <button id="tab-linuxpersistencepostexploitation"
+                    onclick="showResourceCategory('linuxpersistencepostexploitation')"
+                    class="resource-tab px-5 py-2 rounded-full border border-white/10 hover:border-cyber-gold/50 transition-all text-sm font-semibold tracking-wide bg-transparent text-gray-300 hover:text-white shadow-sm shadow-black/20 hover:shadow-cyber-gold/20">Linux
+                    Persistence & Post-Exploitation</button>
+                <button id="tab-webapplicationsecurity" onclick="showResourceCategory('webapplicationsecurity')"
+                    class="resource-tab px-5 py-2 rounded-full border border-white/10 hover:border-cyber-gold/50 transition-all text-sm font-semibold tracking-wide bg-transparent text-gray-300 hover:text-white shadow-sm shadow-black/20 hover:shadow-cyber-gold/20">Web
+                    Application Security</button>
+                <button id="tab-reverseengineeringbinaryexploitationpwn"
+                    onclick="showResourceCategory('reverseengineeringbinaryexploitationpwn')"
+                    class="resource-tab px-5 py-2 rounded-full border border-white/10 hover:border-cyber-gold/50 transition-all text-sm font-semibold tracking-wide bg-transparent text-gray-300 hover:text-white shadow-sm shadow-black/20 hover:shadow-cyber-gold/20">Reverse
+                    Engineering / Binary Exploitation / Pwn</button>
+                <button id="tab-malwareanalysis" onclick="showResourceCategory('malwareanalysis')"
+                    class="resource-tab px-5 py-2 rounded-full border border-white/10 hover:border-cyber-gold/50 transition-all text-sm font-semibold tracking-wide bg-transparent text-gray-300 hover:text-white shadow-sm shadow-black/20 hover:shadow-cyber-gold/20">Malware
+                    Analysis</button>
+                <button id="tab-threathuntingdetection" onclick="showResourceCategory('threathuntingdetection')"
+                    class="resource-tab px-5 py-2 rounded-full border border-white/10 hover:border-cyber-gold/50 transition-all text-sm font-semibold tracking-wide bg-transparent text-gray-300 hover:text-white shadow-sm shadow-black/20 hover:shadow-cyber-gold/20">Threat
+                    Hunting / Detection</button>
+                <button id="tab-digitalforensicsdfir" onclick="showResourceCategory('digitalforensicsdfir')"
+                    class="resource-tab px-5 py-2 rounded-full border border-white/10 hover:border-cyber-gold/50 transition-all text-sm font-semibold tracking-wide bg-transparent text-gray-300 hover:text-white shadow-sm shadow-black/20 hover:shadow-cyber-gold/20">Digital
+                    Forensics / DFIR</button>
+                <button id="tab-certifications" onclick="showResourceCategory('certifications')"
+                    class="resource-tab px-5 py-2 rounded-full border border-white/10 hover:border-cyber-gold/50 transition-all text-sm font-semibold tracking-wide bg-transparent text-gray-300 hover:text-white shadow-sm shadow-black/20 hover:shadow-cyber-gold/20">Certifications</button>
+                <button id="tab-osintrecon" onclick="showResourceCategory('osintrecon')"
+                    class="resource-tab px-5 py-2 rounded-full border border-white/10 hover:border-cyber-gold/50 transition-all text-sm font-semibold tracking-wide bg-transparent text-gray-300 hover:text-white shadow-sm shadow-black/20 hover:shadow-cyber-gold/20">OSINT
+                    / Recon</button>
+                <button id="tab-networksecurity" onclick="showResourceCategory('networksecurity')"
+                    class="resource-tab px-5 py-2 rounded-full border border-white/10 hover:border-cyber-gold/50 transition-all text-sm font-semibold tracking-wide bg-transparent text-gray-300 hover:text-white shadow-sm shadow-black/20 hover:shadow-cyber-gold/20">Network
+                    Security</button>
+                <button id="tab-hardwarefirmware" onclick="showResourceCategory('hardwarefirmware')"
+                    class="resource-tab px-5 py-2 rounded-full border border-white/10 hover:border-cyber-gold/50 transition-all text-sm font-semibold tracking-wide bg-transparent text-gray-300 hover:text-white shadow-sm shadow-black/20 hover:shadow-cyber-gold/20">Hardware
+                    / Firmware</button>
+                <button id="tab-aviationautomotivedronecyber"
+                    onclick="showResourceCategory('aviationautomotivedronecyber')"
+                    class="resource-tab px-5 py-2 rounded-full border border-white/10 hover:border-cyber-gold/50 transition-all text-sm font-semibold tracking-wide bg-transparent text-gray-300 hover:text-white shadow-sm shadow-black/20 hover:shadow-cyber-gold/20">Aviation
+                    / Automotive / Drone Cyber</button>
+                <button id="tab-cryptoencodingstego" onclick="showResourceCategory('cryptoencodingstego')"
+                    class="resource-tab px-5 py-2 rounded-full border border-white/10 hover:border-cyber-gold/50 transition-all text-sm font-semibold tracking-wide bg-transparent text-gray-300 hover:text-white shadow-sm shadow-black/20 hover:shadow-cyber-gold/20">Crypto
+                    / Encoding / Stego</button>
+                <button id="tab-homelabinfrastructure" onclick="showResourceCategory('homelabinfrastructure')"
+                    class="resource-tab px-5 py-2 rounded-full border border-white/10 hover:border-cyber-gold/50 transition-all text-sm font-semibold tracking-wide bg-transparent text-gray-300 hover:text-white shadow-sm shadow-black/20 hover:shadow-cyber-gold/20">Homelab
+                    / Infrastructure</button>
+                <button id="tab-ctfcompetitionspracticeplatforms"
+                    onclick="showResourceCategory('ctfcompetitionspracticeplatforms')"
+                    class="resource-tab px-5 py-2 rounded-full border border-white/10 hover:border-cyber-gold/50 transition-all text-sm font-semibold tracking-wide bg-transparent text-gray-300 hover:text-white shadow-sm shadow-black/20 hover:shadow-cyber-gold/20">CTF
+                    / Competitions / Practice Platforms</button>
+                <button id="tab-foundationsprogrammingsupport"
+                    onclick="showResourceCategory('foundationsprogrammingsupport')"
+                    class="resource-tab px-5 py-2 rounded-full border border-white/10 hover:border-cyber-gold/50 transition-all text-sm font-semibold tracking-wide bg-transparent text-gray-300 hover:text-white shadow-sm shadow-black/20 hover:shadow-cyber-gold/20">Foundations
+                    / Programming Support</button>
+            </div>
+
+            <div class="glass-card p-10 rounded-2xl relative overflow-hidden max-w-[80vw] mx-auto min-h-[400px]">
+                <h3 id="resource-category-title"
+                    class="text-2xl font-bold text-blue-400 text-center mb-10 tracking-widest uppercase">
+                </h3>
+
+                <div id="resource-links-container" class="grid md:grid-cols-2 gap-x-12 gap-y-6">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const resourcesData = { "penetrationtestingoffensiveredteam": { "title": "Penetration Testing / Offensive / Red Team", "links": [{ "name": "PentesterLab \u2014 Exercises", "url": "https://pentesterlab.com/exercises" }, { "name": "Pentest Everything \u2014 Writeups", "url": "https://viperone.gitbook.io/pentest-everything/writeups" }, { "name": "Rowbot's PenTest Notes \u2014 Pre-engagement", "url": "https://guide.offsecnewbie.com/pre-engagement" }, { "name": "Pentesting Notes (Incendium)", "url": "https://notes.incendium.rocks/pentesting-notes" }, { "name": "Reverse Shell Generator (revshells)", "url": "https://www.revshells.com/" }, { "name": "Webhook.site", "url": "https://webhook.site/" }, { "name": "FuzzySecurity \u2014 Windows Privilege Escalation", "url": "https://fuzzysecurity.com/tutorials/16.html" }, { "name": "Hacking Articles - PenTesting", "url": "https://www.hackingarticles.in/penetration-testing/" }, { "name": "SysReptor \u2014 Pentest reporting platform", "url": "https://github.com/Syslifters/sysreptor" }, { "name": "Tradecraft Garden \u2014 PIC / implant research", "url": "https://tradecraftgarden.org/index.html" }, { "name": "Atomic Red Team", "url": "https://www.atomicredteam.io/atomic-red-team" }, { "name": "Metasploit \u2014 Exploitation framework", "url": "https://github.com/rapid7/metasploit-framework" }, { "name": "msfvenom \u2014 Payload & shellcode generator", "url": "https://docs.metasploit.com/docs/using-metasploit/basics/how-to-use-msfvenom.html" }, { "name": "Sliver \u2014 Cross-platform C2 framework", "url": "https://github.com/BishopFox/sliver" }, { "name": "Realm (Spellshift) \u2014 Adversary emulation framework", "url": "https://github.com/spellshift/realm" }, { "name": "Ligolo-ng \u2014 Tunneling & pivoting tool", "url": "https://github.com/nicocha30/ligolo-ng" }, { "name": "NetExec \u2014 Network service exploitation (ex-CrackMapExec)", "url": "https://github.com/Pennyw0rth/NetExec" }, { "name": "Hydra \u2014 Network login brute-forcer", "url": "https://github.com/vanhauser-thc/thc-hydra" }, { "name": "CUPP \u2014 Common User Passwords Profiler", "url": "https://github.com/Mebus/cupp" }, { "name": "SecLists \u2014 Wordlists for security testing", "url": "https://github.com/danielmiessler/SecLists" }, { "name": "LinPEAS \u2014 Linux privesc enumeration", "url": "https://github.com/peass-ng/PEASS-ng" }, { "name": "WinPEAS \u2014 Windows privesc enumeration", "url": "https://github.com/peass-ng/PEASS-ng/tree/master/winPEAS" }, { "name": "LinEnum \u2014 Linux enum & privesc checks", "url": "https://github.com/rebootuser/LinEnum" }, { "name": "HackTricks \u2014 Pentest methodology wiki / bible", "url": "https://book.hacktricks.wiki/" }, { "name": "PayloadsAllTheThings \u2014 Payload & technique cheatsheets", "url": "https://github.com/swisskyrepo/PayloadsAllTheThings" }, { "name": "GTFOBins \u2014 Linux living-off-the-land binaries", "url": "https://gtfobins.github.io/" }, { "name": "LOLBAS \u2014 Windows living-off-the-land binaries", "url": "https://lolbas-project.github.io/" }, { "name": "BloodHound (CE) \u2014 Active Directory attack-path mapping", "url": "https://github.com/SpecterOps/BloodHound" }, { "name": "Impacket \u2014 AD / network protocol toolkit", "url": "https://github.com/fortra/impacket" }, { "name": "Responder \u2014 LLMNR/NBT-NS poisoning", "url": "https://github.com/lgandx/Responder" }] }, "linuxpersistencepostexploitation": { "title": "Linux Persistence & Post-Exploitation", "links": [{ "name": "Threat Hunting Blog \u2014 pberba (Linux persistence series)", "url": "https://pberba.github.io/security/" }, { "name": "Internal All The Things \u2014 Linux Persistence", "url": "https://swisskyrepo.github.io/InternalAllTheThings/redteam/persistence/linux-persistence/" }, { "name": "9 Ways to Backdoor a Linux Box", "url": "https://airman604.medium.com/9-ways-to-backdoor-a-linux-box-f5f83bae5a3c" }, { "name": "My Methods To Achieve Persistence (flaviu.io)", "url": "https://flaviu.io/advanced-persistent-threat/" }, { "name": "Linux Persistence Mechanisms & How to Find Them", "url": "https://securityboulevard.com/2024/10/linux-persistence-mechanisms-and-how-to-find-them/" }, { "name": "Hunting for Persistence in Linux Pt.2", "url": "https://pberba.github.io/security/2021/11/23/linux-threat-hunting-for-persistence-account-creation-manipulation/" }, { "name": "Linux Threat Hunting Persistence (0xMatheuZ)", "url": "https://matheuzsecurity.github.io/hacking/linux-threat-hunting-persistence/" }] }, "webapplicationsecurity": { "title": "Web Application Security", "links": [{ "name": "Hacksplaining \u2014 XSS/prevention", "url": "https://hacksplaining.com/" }, { "name": "vulnbank \u2014 Vulnerable app", "url": "https://github.com/vulnbank/vulnbank" }, { "name": "Burp Suite \u2014 Web proxy & scanner", "url": "https://portswigger.net/burp" }, { "name": "Caido \u2014 Lightweight web pentest proxy", "url": "https://caido.io/" }, { "name": "OWASP ZAP \u2014 Web app scanner & crawler", "url": "https://www.zaproxy.org/" }, { "name": "sqlmap \u2014 Automated SQL injection tool", "url": "https://sqlmap.org/" }, { "name": "dalfox \u2014 Fast XSS scanner", "url": "https://github.com/hahwul/dalfox" }, { "name": "feroxbuster \u2014 Content/directory brute-forcer", "url": "https://github.com/epi052/feroxbuster" }, { "name": "ffuf \u2014 Fast web fuzzer", "url": "https://github.com/ffuf/ffuf" }, { "name": "Arjun \u2014 HTTP parameter discovery", "url": "https://github.com/s0md3v/Arjun" }, { "name": "WPScan \u2014 WordPress vulnerability scanner", "url": "https://github.com/wpscanteam/wpscan" }, { "name": "droopescan \u2014 Drupal/SilverStripe CMS scanner", "url": "https://github.com/SamJoan/droopescan" }, { "name": "PortSwigger Web Security Academy \u2014 Free web hacking course", "url": "https://portswigger.net/web-security" }, { "name": "OWASP Web Security Testing Guide (WSTG)", "url": "https://owasp.org/www-project-web-security-testing-guide/" }, { "name": "OWASP Top 10", "url": "https://owasp.org/www-project-top-ten/" }] }, "reverseengineeringbinaryexploitationpwn": { "title": "Reverse Engineering / Binary Exploitation / Pwn", "links": [{ "name": "pwn.college", "url": "https://pwn.college/" }, { "name": "ROP Emporium", "url": "https://ropemporium.com/" }, { "name": "Exploit Education \u2014 Phoenix", "url": "https://exploit.education/phoenix/getting-started/" }, { "name": "Crackmes.one", "url": "https://crackmes.one/" }, { "name": "Microcorruption", "url": "https://microcorruption.com/map" }, { "name": "Ghidra \u2014 NSA reverse engineering suite (free)", "url": "https://ghidra-sre.org/" }, { "name": "IDA (Hex-Rays) \u2014 Industry-standard disassembler", "url": "https://hex-rays.com/ida-free" }, { "name": "Binary Ninja \u2014 Modern disassembler / decompiler", "url": "https://binary.ninja/" }, { "name": "dnSpy (dnSpyEx fork) \u2014 .NET debugger & assembly editor", "url": "https://github.com/dnSpyEx/dnSpy" }, { "name": "x64dbg \u2014 Windows debugger", "url": "https://x64dbg.com/" }, { "name": "Cutter \u2014 Free Rizin/Ghidra-backed RE GUI", "url": "https://cutter.re/" }, { "name": "Decompiler Explorer (dogbolt)", "url": "https://dogbolt.org/" }, { "name": "Compiler Explorer (godbolt)", "url": "https://godbolt.org/" }, { "name": "Frida \u2014 Dynamic instrumentation", "url": "https://frida.re/" }, { "name": "LLDB Tutorial", "url": "https://lldb.llvm.org/use/tutorial.html" }, { "name": "GDB Online Debugger", "url": "https://www.onlinegdb.com/" }, { "name": "rvcodec.js \u2014 RISC-V encoder/decoder", "url": "https://luplab.gitlab.io/rvcodecjs/" }, { "name": "Linux Syscalls \u2014 syscall.sh", "url": "https://syscall.sh/" }, { "name": "C Standard Library Reference", "url": "https://www.tutorialspoint.com/c_standard_library/index.htm" }, { "name": "pwntools \u2014 CTF / exploit-dev framework", "url": "https://github.com/Gallopsled/pwntools" }, { "name": "Nightmare \u2014 Free intro-to-advanced pwn/RE course", "url": "https://guyinatuxedo.github.io/" }] }, "malwareanalysis": { "title": "Malware Analysis", "links": [{ "name": "Malware-Traffic-Analysis.net \u2014 Training", "url": "https://malware-traffic-analysis.net/training-exercises.html" }, { "name": "Hunting Rootkits with eBPF (Aqua)", "url": "https://www.aquasec.com/blog/linux-syscall-hooking-using-tracee/" }, { "name": "strace \u2014 Trace system calls & signals", "url": "https://strace.io/" }, { "name": "REMnux \u2014 Linux distro for malware analysis", "url": "https://remnux.org/" }, { "name": "FLARE-VM \u2014 Windows malware analysis VM (Mandiant)", "url": "https://github.com/mandiant/flare-vm" }, { "name": "CAPE Sandbox \u2014 Automated malware sandbox", "url": "https://github.com/kevoreilly/CAPEv2" }, { "name": "INetSim \u2014 Fake network services for dynamic analysis", "url": "https://www.inetsim.org/" }, { "name": "CAPA \u2014 Detect capabilities in executables (Mandiant)", "url": "https://github.com/mandiant/capa" }, { "name": "Detect It Easy (DIE) \u2014 Packer / PE identification", "url": "https://github.com/horsicq/Detect-It-Easy" }, { "name": "PEStudio \u2014 Static PE triage", "url": "https://www.winitor.com/" }, { "name": "oletools \u2014 Analyze malicious Office documents", "url": "https://github.com/decalage2/oletools" }, { "name": "System Informer \u2014 Process / handle inspection (ex-Process Hacker)", "url": "https://systeminformer.sourceforge.io/" }, { "name": "Sysinternals \u2014 ProcMon, Autoruns, Process Explorer", "url": "https://learn.microsoft.com/en-us/sysinternals/" }] }, "threathuntingdetection": { "title": "Threat Hunting / Detection", "links": [{ "name": "YARA \u2014 Pattern matching for malware ID", "url": "https://github.com/VirusTotal/yara" }, { "name": "Sigma \u2014 Generic detection rule format", "url": "https://github.com/SigmaHQ/sigma" }, { "name": "MISP \u2014 Threat intelligence sharing platform", "url": "https://www.misp-project.org/" }, { "name": "Velociraptor \u2014 Endpoint DFIR & threat hunting", "url": "https://github.com/Velocidex/velociraptor" }, { "name": "Security Onion \u2014 Network security monitoring distro", "url": "https://securityonionsolutions.com/" }, { "name": "Wazuh \u2014 Open-source SIEM / XDR", "url": "https://wazuh.com/" }] }, "digitalforensicsdfir": { "title": "Digital Forensics / DFIR", "links": [{ "name": "Volatility \u2014 Memory forensics", "url": "https://volatilityfoundation.org/" }, { "name": "Autopsy \u2014 GUI digital forensics platform", "url": "https://www.autopsy.com/" }, { "name": "The Sleuth Kit \u2014 CLI disk / file-system forensics", "url": "https://www.sleuthkit.org/" }, { "name": "FTK Imager \u2014 Forensic disk imaging & acquisition", "url": "https://www.exterro.com/digital-forensics-software/ftk-imager" }, { "name": "KAPE \u2014 Artifact collection & parsing (Kroll)", "url": "https://www.kroll.com/en/services/cyber/incident-response-litigation-support/kroll-artifact-parser-extractor-kape" }, { "name": "Eric Zimmerman's Tools \u2014 Windows artifact parsers", "url": "https://ericzimmerman.github.io/" }, { "name": "Plaso / log2timeline \u2014 Super-timeline generation", "url": "https://github.com/log2timeline/plaso" }, { "name": "RegRipper \u2014 Windows registry forensics", "url": "https://github.com/keydet89/RegRipper3.0" }, { "name": "DBAN \u2014 Darik's Boot and Nuke (disk wipe)", "url": "https://sourceforge.net/projects/dban/" }, { "name": "Hiren's BootCD PE", "url": "https://www.hirensbootcd.org/download/" }, { "name": "HDDSuperClone", "url": "https://www.hddsuperclone.com/" }, { "name": "Disk Drill \u2014 Data recovery", "url": "https://www.cleverfiles.com/data-recovery-software.html" }] }, "certifications": { "title": "Certifications", "links": [{ "name": "TCM Security \u2014 Certifications (PNPT, PJPT, PSAA, etc.)", "url": "https://certifications.tcm-sec.com/" }, { "name": "Invoke RE \u2014 Malware analysis & reverse engineering certs", "url": "https://invokere.com/" }, { "name": "Hack The Box \u2014 Certifications (CPTS, CBBH, CDSA)", "url": "https://www.hackthebox.com/hacker/certifications" }, { "name": "TryHackMe \u2014 Certifications (PT1, SAL1)", "url": "https://tryhackme.com/certifications" }, { "name": "Zero-Point Security \u2014 Red Team Ops (CRTO / CRTO II)", "url": "https://training.zeropointsecurity.co.uk/courses/red-team-ops" }, { "name": "Zero-Point Security \u2014 Red Team Lead (CRTL)", "url": "https://training.zeropointsecurity.co.uk/courses/red-team-lead" }, { "name": "OffSec \u2014 Certifications (OSCP, OSEP, OSED)", "url": "https://www.offsec.com/courses-and-certifications/" }, { "name": "CompTIA Security+", "url": "https://www.comptia.org/certifications/security" }, { "name": "Cisco \u2014 Certifications (CCNA / CyberOps)", "url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/index.html" }] }, "osintrecon": { "title": "OSINT / Recon", "links": [{ "name": "OSINT Framework", "url": "https://osintframework.com/" }, { "name": "DNSDumpster", "url": "https://dnsdumpster.com/" }, { "name": "ICANN Domain Lookup", "url": "https://lookup.icann.org/en/lookup" }, { "name": "usersearch.org \u2014 Username lookup", "url": "https://usersearch.org/" }, { "name": "Flightradar24", "url": "https://www.flightradar24.com/" }, { "name": "No-Fly-Zone (AirspaceLink)", "url": "https://portal.airspacelink.com/discover/advisories" }, { "name": "Nmap \u2014 Network mapper & port scanner", "url": "https://nmap.org/" }, { "name": "whois \u2014 Domain/IP registration lookup", "url": "https://github.com/rfc1036/whois" }, { "name": "dnsenum \u2014 DNS enumeration & subdomains", "url": "https://github.com/fwaeytens/dnsenum" }] }, "networksecurity": { "title": "Network Security", "links": [{ "name": "Root-Me \u2014 Network challenges", "url": "https://www.root-me.org/en/Challenges/Network/" }, { "name": "tshark Notes", "url": "https://johannst.github.io/notes/network/tshark.html" }, { "name": "Computer Networks: A Systems Approach (book)", "url": "https://book.systemsapproach.org/foundation/problem.html" }, { "name": "VyOS \u2014 Network OS", "url": "https://vyos.io/" }, { "name": "Wireshark \u2014 Network protocol analyzer", "url": "https://www.wireshark.org/" }, { "name": "tcpdump \u2014 Command-line packet capture", "url": "https://www.tcpdump.org/" }, { "name": "bpftrace \u2014 High-level eBPF tracing for Linux", "url": "https://github.com/bpftrace/bpftrace" }, { "name": "Termshark \u2014 Terminal UI for tshark / Wireshark", "url": "https://github.com/gcla/termshark" }] }, "hardwarefirmware": { "title": "Hardware / Firmware", "links": [{ "name": "Das U-Boot \u2014 Bootloader docs", "url": "https://docs.u-boot-project.org/en/latest/" }, { "name": "J1939 PGN CAN ID converter (automotive/CAN bus)", "url": "https://www.csselectronics.com/pages/j1939-pgn-conversion-tool" }] }, "aviationautomotivedronecyber": { "title": "Aviation / Automotive / Drone Cyber", "links": [{ "name": "CyberTruck Challenge", "url": "https://www.cybertruckchallenge.org/" }, { "name": "CyberDrone Challenge", "url": "https://www.cyberdrone-challenge.org/" }, { "name": "Aerospace Hacking Tools (g4lxy)", "url": "https://tools.g4lxy.space/" }] }, "cryptoencodingstego": { "title": "Crypto / Encoding / Stego", "links": [{ "name": "JWT.io", "url": "https://www.jwt.io/" }, { "name": "hashes.com \u2014 Hash decrypt/crack", "url": "https://hashes.com/en/decrypt/hash" }, { "name": "Out Horse Your Stego \u2014 Steganography", "url": "https://outhorseyourstego.com/" }, { "name": "CrackStation \u2014 Free password hash cracker (rainbow tables)", "url": "https://crackstation.net/" }, { "name": "CyberChef \u2014 The Cyber Swiss Army Knife (encode/decode/analyze)", "url": "https://gchq.github.io/CyberChef/" }, { "name": "CryptoHack \u2014 Hands-on cryptography challenges", "url": "https://cryptohack.org/" }] }, "homelabinfrastructure": { "title": "Homelab / Infrastructure", "links": [{ "name": "Proxmox VE \u2014 Virtualization & VM/container host", "url": "https://www.proxmox.com/en/proxmox-virtual-environment" }, { "name": "Apache Guacamole \u2014 Clientless remote desktop gateway", "url": "https://guacamole.apache.org/" }, { "name": "Pangolin \u2014 Self-hosted WireGuard reverse-proxy tunnel", "url": "https://github.com/fosrl/pangolin" }, { "name": "Tailscale \u2014 WireGuard-based mesh VPN", "url": "https://tailscale.com/" }, { "name": "Terraform \u2014 Infrastructure-as-code provisioning", "url": "https://www.terraform.io/" }, { "name": "OpenTofu \u2014 Open-source Terraform fork (IaC)", "url": "https://opentofu.org/" }, { "name": "Ansible \u2014 IT automation & orchestration", "url": "https://github.com/ansible/ansible" }, { "name": "Salt \u2014 Infra automation & config management", "url": "https://github.com/saltstack/salt" }] }, "ctfcompetitionspracticeplatforms": { "title": "CTF / Competitions / Practice Platforms", "links": [{ "name": "CTFtime", "url": "https://ctftime.org/event/list/upcoming" }, { "name": "National Cyber League \u2014 Cyber Skyline", "url": "https://cyberskyline.com/events/ncl/dashboard/student" }, { "name": "NSA Codebreaker Challenge", "url": "https://nsa-codebreaker.org/resources" }, { "name": "The CTF Primer \u2014 CyLab", "url": "https://primer.cylabacademy.org/" }, { "name": "Cylab-Academy", "url": "https://cylabacademy.org/" }, { "name": "HackTheBox Academy", "url": "https://academy.hackthebox.com/" }, { "name": "TryHackMe \u2014 Guided hands-on rooms & learning paths", "url": "https://tryhackme.com/" }, { "name": "TitanTurtles Cybersecurity Club", "url": "https://titanturtles.org/" }, { "name": "VulnHub \u2014 Downloadable vulnerable VMs", "url": "https://www.vulnhub.com/" }, { "name": "IppSec \u2014 Searchable index of HTB walkthrough videos", "url": "https://ippsec.rocks/" }] }, "foundationsprogrammingsupport": { "title": "Foundations / Programming Support", "links": [{ "name": "Boot.dev \u2014 Courses / Git", "url": "https://www.boot.dev/courses" }, { "name": "Codedex", "url": "https://www.codedex.io/home" }, { "name": "NandGame \u2014 Build a computer from scratch", "url": "https://nandgame.com/" }, { "name": "Carbon \u2014 Code screenshots", "url": "https://carbon.now.sh/" }, { "name": "Nand2Tetris \u2014 Build a working computer from NAND gates up", "url": "https://www.nand2tetris.org/" }, { "name": "Linux Journey \u2014 Free intro to Linux fundamentals", "url": "https://linuxjourney.com/" }, { "name": "Exercism \u2014 Free practice in 70+ languages w/ mentoring", "url": "https://exercism.org/" }] } };
+
+        function showResourceCategory(catId) {
+            document.querySelectorAll('.resource-tab').forEach(el => {
+                el.classList.remove('bg-white/10', 'border-cyber-gold', 'text-cyber-gold');
+                el.classList.add('bg-transparent', 'border-white/10', 'text-gray-300');
+            });
+            const activeTab = document.getElementById('tab-' + catId);
+            if (activeTab) {
+                activeTab.classList.remove('bg-transparent', 'border-white/10', 'text-gray-300');
+                activeTab.classList.add('bg-white/10', 'border-cyber-gold', 'text-cyber-gold');
+            }
+
+            const data = resourcesData[catId];
+            document.getElementById('resource-category-title').innerText = data.title;
+
+            const container = document.getElementById('resource-links-container');
+            container.innerHTML = '';
+            data.links.forEach(link => {
+                const linkEl = document.createElement('div');
+                linkEl.className = 'flex items-start space-x-3 group';
+                linkEl.innerHTML = `
+                    <span class="text-blue-400 mt-1 transition-colors group-hover:text-cyber-gold font-bold">
+                        &gt;
+                    </span>
+                    <a href="${link.url}" target="_blank" class="text-gray-300 font-semibold transition-colors group-hover:text-white leading-relaxed truncate block max-w-full" title="${link.name}">
+                        ${link.name}
+                    </a>
+                `;
+                container.appendChild(linkEl);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const firstCatId = Object.keys(resourcesData)[0];
+            if (firstCatId) {
+                showResourceCategory(firstCatId);
+            }
+        });
+    </script>
 
     <!-- Footer -->
     <footer class="bg-cyber-bg border-t border-white/5 py-16 relative z-10">
@@ -1065,6 +1181,10 @@
                         <li>
                             <a href="javascript:void(0)" onclick="showPage('competitions')"
                                 class="hover:text-cyber-gold transition-colors">Competitions</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" onclick="showPage('resources')"
+                                class="hover:text-cyber-gold transition-colors">Resources</a>
                         </li>
                         <!-- <li>
                             <a href="javascript:void(0)" onclick="showPage('ctf')"
